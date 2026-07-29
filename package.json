@@ -1,0 +1,16 @@
+{
+  "name": "bonadio-kit-juridico-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "vercel": "^58.1.0"
+  }
+}

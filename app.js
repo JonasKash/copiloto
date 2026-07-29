@@ -37,17 +37,27 @@ async function handleNext(event) {
 
   const button = event.currentTarget.querySelector("button[type=submit]");
   button.disabled = true;
+  const originalText = button.innerHTML;
   button.innerHTML = `Criando sua recomendação…`;
+
   try {
     const response = await fetch("/api/diagnostics", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(state.answers)
     });
-    if (!response.ok) throw new Error("Falha ao salvar diagnóstico");
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(data?.error || `Falha ao salvar diagnóstico (${response.status})`);
+    }
   } catch (error) {
     console.warn(error.message);
+    state.error = error.message;
+    button.disabled = false;
+    button.innerHTML = originalText;
+    return renderDiagnostic();
   }
+
   sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state.answers));
   renderSales();
 }
@@ -67,14 +77,16 @@ async function openCheckout() {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
+  modal.querySelector("button, [data-close-inner]")?.focus();
+
   try {
     const response = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ product: product.slug, answers: state.answers })
     });
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.error || "Checkout indisponível");
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.error || response.statusText || "Checkout indisponível");
     content.innerHTML = `
       <span class="modal-eyebrow">PAGAMENTO VIA PIX</span>
       <h2 id="checkout-title">Seu acesso está quase pronto</h2>
@@ -88,6 +100,7 @@ async function openCheckout() {
   } catch (error) {
     content.innerHTML = `<span class="modal-eyebrow">PAGAMENTO VIA PIX</span><h2 id="checkout-title">Checkout em configuração</h2><p>${error.message}. Use a chave PIX de teste enquanto ajustamos o ambiente.</p><button class="outline-button" data-close-inner>Entendi</button>`;
     document.querySelector("[data-close-inner]").addEventListener("click", closeCheckout);
+    document.querySelector("[data-close-inner]")?.focus();
   }
 }
 
@@ -114,8 +127,11 @@ async function pollPayment(orderId) {
 }
 
 function closeCheckout() {
-  document.querySelector("#checkout-modal")?.classList.remove("open");
-  document.querySelector("#checkout-modal")?.setAttribute("aria-hidden", "true");
+  const checkoutModal = document.querySelector("#checkout-modal");
+  const firstCheckoutButton = document.querySelector("[data-checkout]");
+  firstCheckoutButton?.focus();
+  checkoutModal?.setAttribute("aria-hidden", "true");
+  checkoutModal?.classList.remove("open");
   document.body.classList.remove("modal-open");
 }
 

@@ -1,7 +1,9 @@
 export async function supabaseRequest(path, options = {}) {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!url || !key) throw new Error("Supabase não configurado");
+  if (!url || !key) {
+    throw new Error("Supabase não configurado. Verifique SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY no ambiente.");
+  }
   return fetch(`${url}/rest/v1/${path}`, {
     ...options,
     headers: {

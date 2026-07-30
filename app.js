@@ -5,9 +5,21 @@ import { salesTemplate } from "./components/sales-page.js";
 import { personalize } from "./lib/personalization.js";
 
 const root = document.querySelector("#app");
-const state = { step: 0, answers: {}, error: "" };
+const state = { step: 0, answers: {}, error: "", meta: getTrackingMeta() };
 const STATIC_PIX = "00020126360014BR.GOV.BCB.PIX011466309977000101520400005303986540517.005802BR5901N6001C62120508kitatend63048CCE";
 const STORAGE_KEY = "avestra-diagnostic";
+
+function getTrackingMeta() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") || params.get("source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    origem: params.get("origem") || document.referrer || "",
+    source_url: window.location.href,
+    created_at: new Date().toISOString()
+  };
+}
 
 function renderDiagnostic() {
   root.innerHTML = diagnosticTemplate(state);
@@ -44,7 +56,7 @@ async function handleNext(event) {
     const response = await fetch("/api/diagnostics", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(state.answers)
+      body: JSON.stringify({ ...state.answers, ...state.meta })
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
@@ -58,7 +70,7 @@ async function handleNext(event) {
     return renderDiagnostic();
   }
 
-  sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state.answers));
+  sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ answers: state.answers, meta: state.meta }));
   renderSales();
 }
 
@@ -83,7 +95,7 @@ async function openCheckout() {
     const response = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ product: product.slug, answers: state.answers })
+      body: JSON.stringify({ product: product.slug, answers: state.answers, meta: state.meta })
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(data.error || response.statusText || "Checkout indisponível");
@@ -139,6 +151,10 @@ function escapeCheckout(event) { if (event.key === "Escape") closeCheckout(); }
 
 const saved = sessionStorage.getItem(STORAGE_KEY) || sessionStorage.getItem("bonadio-diagnostic");
 if (saved) {
-  try { state.answers = JSON.parse(saved); } catch {}
+  try {
+    const parsed = JSON.parse(saved);
+    state.answers = parsed.answers || parsed;
+    state.meta = parsed.meta || state.meta;
+  } catch {}
 }
 renderDiagnostic();

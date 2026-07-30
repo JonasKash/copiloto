@@ -4,8 +4,22 @@ create table if not exists public.diagnostics (
   tempo text not null,
   area text not null,
   user_agent text,
+  meta jsonb not null default '{}'::jsonb,
   created_at timestamptz not null default now()
 );
+
+-- Migração: adiciona coluna meta caso a tabela já exista sem ela
+do $$
+begin
+  if not exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public'
+      and table_name   = 'diagnostics'
+      and column_name  = 'meta'
+  ) then
+    alter table public.diagnostics add column meta jsonb not null default '{}'::jsonb;
+  end if;
+end $$;
 
 create table if not exists public.orders (
   id uuid primary key,

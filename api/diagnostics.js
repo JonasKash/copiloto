@@ -8,13 +8,18 @@ const allowed = {
 
 export default async function handler(request, response) {
   if (request.method !== "POST") return json(response, 405, { error: "Método não permitido" });
-  const answers = request.body || {};
+  const body = request.body || {};
+  const { meta = {}, ...answers } = body;
   const valid = Object.entries(allowed).every(([key, values]) => values.includes(answers[key]));
   if (!valid) return json(response, 400, { error: "Respostas inválidas" });
   try {
     const result = await supabaseRequest("diagnostics", {
       method: "POST",
-      body: JSON.stringify({ ...answers, user_agent: request.headers["user-agent"]?.slice(0, 250) || null })
+      body: JSON.stringify({
+        ...answers,
+        meta,
+        user_agent: request.headers["user-agent"]?.slice(0, 250) || null
+      })
     });
     if (!result.ok) {
       const text = await result.text().catch(() => "");

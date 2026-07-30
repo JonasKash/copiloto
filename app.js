@@ -56,7 +56,7 @@ async function handleNext(event) {
     const response = await fetch("/api/diagnostics", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...state.answers, ...state.meta })
+      body: JSON.stringify({ ...state.answers, meta: state.meta })
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {

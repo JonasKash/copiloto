@@ -16,10 +16,14 @@ export default async function handler(request, response) {
       method: "POST",
       body: JSON.stringify({ ...answers, user_agent: request.headers["user-agent"]?.slice(0, 250) || null })
     });
-    if (!result.ok) throw new Error(await result.text());
+    if (!result.ok) {
+      const text = await result.text().catch(() => "");
+      throw new Error(text || "Falha ao gravar no Supabase");
+    }
     return json(response, 201, { saved: true });
   } catch (error) {
     console.error("diagnostics:", error.message);
-    return json(response, 503, { error: "Armazenamento temporariamente indisponível" });
+    const fallback = "Armazenamento temporariamente indisponível";
+    return json(response, 503, { error: error.message || fallback });
   }
 }

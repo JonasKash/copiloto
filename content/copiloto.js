@@ -1,7 +1,54 @@
 export const HOTMART_URL =
   'https://pay.hotmart.com/V105994251O?off=7xe30h5v&bid=1785716839200';
 
-export const copy = {
+// Hero e Enemy mudam de acordo com a dor que o advogado apontou no diagnóstico.
+// O resto da página (agentes, mentor, preço, FAQ) é o mesmo, porque o produto é o mesmo.
+const heroVariants = {
+  default: {
+    h1: '80% do seu trabalho repetitivo, automatizado.',
+    sub:
+      'Pesquisa, petição, contrato, prazo, risco e honorários. 6 agentes assumem o que é repetitivo. Sobra tempo pra você fazer o que só um advogado faz.',
+    ctaPrimary: 'Quero meus 6 agentes por R$ 27',
+    ctaSecondary: 'Ver os 6 agentes',
+  },
+  atendimento: {
+    h1: 'Pare de perder cliente por demora na resposta.',
+    sub:
+      'Cliente não espera. Enquanto você pesquisa jurisprudência ou redige do zero, ele já está falando com outro escritório. Os 6 agentes tiram o trabalho manual do caminho pra você responder rápido, sem perder precisão.',
+    ctaPrimary: 'Quero responder mais rápido por R$ 27',
+    ctaSecondary: 'Ver os 6 agentes',
+  },
+  peticao: {
+    h1: 'Petição pronta em minutos, não em horas.',
+    sub:
+      'Nada de folha em branco. O Redator de Petições monta a peça com memória do processo, e mais 5 agentes cuidam de pesquisa, contrato, prazo, risco e honorários.',
+    ctaPrimary: 'Quero petições mais rápidas por R$ 27',
+    ctaSecondary: 'Ver os 6 agentes',
+  },
+};
+
+const enemyVariants = {
+  default: {
+    h: 'Advogado sozinho vira funcionário da própria banca.',
+    p:
+      'Pesquisar jurisprudência toma a manhã. Redigir a petição toma a tarde. E o prazo do processo do mês passado quase passou direto, porque ninguém lembrou.',
+    quote: 'Você estudou pra advogar, não pra ser secretário do próprio escritório.',
+  },
+  atendimento: {
+    h: 'Enquanto você redige, o cliente espera. E desiste.',
+    p:
+      'Não é falta de vontade de responder rápido. É que a resposta boa exige pesquisa, contexto do caso, atenção. Isso consome o tempo que devia ir pro atendimento.',
+    quote: 'Cliente rápido não é cliente mal atendido. É cliente que não fica esperando à toa.',
+  },
+  peticao: {
+    h: 'Cada petição começando do zero é tempo que não volta.',
+    p:
+      'Mesmo caso parecido com outro que você já fez mês passado, mas a peça nasce em branco de novo. Pesquisa, estrutura, fundamentação: tudo refeito, sempre.',
+    quote: 'A petição não devia ser o gargalo. Devia ser a parte fácil.',
+  },
+};
+
+const baseCopy = {
   nav: {
     logo: 'Copiloto Jurídico',
     links: [
@@ -15,12 +62,6 @@ export const copy = {
   },
 
   hero: {
-    badge: '6 agentes de IA · pagamento único',
-    h1: '80% do seu trabalho repetitivo, automatizado.',
-    sub:
-      'Pesquisa, petição, contrato, prazo, risco e honorários. 6 agentes assumem o que é repetitivo. Sobra tempo pra você fazer o que só um advogado faz.',
-    ctaPrimary: 'Quero meus 6 agentes por R$ 27',
-    ctaSecondary: 'Ver os 6 agentes',
     proof: 'Supervisionado por um advogado registrado na OAB/SP',
   },
 
@@ -39,11 +80,6 @@ export const copy = {
 
   enemy: {
     eyebrow: 'O problema',
-    h: 'Advogado sozinho vira funcionário da própria banca.',
-    p:
-      'Pesquisar jurisprudência toma a manhã. Redigir a petição toma a tarde. E o prazo do processo do mês passado quase passou direto, porque ninguém lembrou.',
-    quote:
-      'Você estudou pra advogar, não pra ser secretário do próprio escritório.',
     bad: {
       label: 'Sem os 6 agentes',
       items: [
@@ -289,3 +325,15 @@ export const copy = {
       'AVESTRA MARKETING DIRETO LTDA · CNPJ 66.309.977/0001-01. O Copiloto Jurídico é uma ferramenta de apoio à atividade advocatícia e não substitui o advogado responsável pelo caso.',
   },
 };
+
+export function getCopy(variant = 'default') {
+  const hero = heroVariants[variant] || heroVariants.default;
+  const enemy = enemyVariants[variant] || enemyVariants.default;
+  return {
+    ...baseCopy,
+    hero: { ...baseCopy.hero, ...hero },
+    enemy: { ...baseCopy.enemy, ...enemy },
+  };
+}
+
+export const copy = getCopy('default');

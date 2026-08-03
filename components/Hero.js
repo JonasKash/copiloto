@@ -1,4 +1,4 @@
-import { copy, HOTMART_URL } from '@/content/copiloto';
+import { copy as defaultCopy, HOTMART_URL } from '@/content/copiloto';
 import styles from './Hero.module.css';
 
 const AGENT_ROWS = [
@@ -7,13 +7,12 @@ const AGENT_ROWS = [
   { name: 'Gerenciador de Prazos', meta: 'Alerta antes do vencimento', color: '#D1FAE5', text: '#065F46', initials: 'GP' },
 ];
 
-export default function Hero() {
+export default function Hero({ copy = defaultCopy }) {
   const { hero } = copy;
   return (
     <section className={styles.hero}>
       <div className={`${styles.inner} wrap`}>
         <div className={styles.content}>
-          <span className={styles.badge}>{hero.badge}</span>
           <h1 className={styles.h1}>{hero.h1}</h1>
           <p className={styles.sub}>{hero.sub}</p>
           <div className={styles.actions}>

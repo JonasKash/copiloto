@@ -1,7 +1,7 @@
-import { copy } from '@/content/copiloto';
+import { copy as defaultCopy } from '@/content/copiloto';
 import styles from './Enemy.module.css';
 
-export default function Enemy() {
+export default function Enemy({ copy = defaultCopy }) {
   const { enemy } = copy;
   return (
     <section className={styles.section} id="como-funciona">

@@ -1,0 +1,22 @@
+.section { background: var(--white); padding: 8px 20px 48px; }
+
+.inner {
+  max-width: 720px; margin: 0 auto; text-align: center;
+  border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: 28px 22px; background: var(--bg);
+}
+
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--gold-deep); background: #FBF4DE; border: 1px solid #E9D599;
+  padding: 5px 14px; border-radius: 980px; margin-bottom: 16px;
+}
+
+.text { font-size: 15px; color: var(--text); line-height: 1.7; font-weight: 500; }
+
+@media (min-width: 640px) {
+  .section { padding: 8px 24px 64px; }
+  .inner { padding: 36px 44px; }
+  .text { font-size: 16px; }
+}

@@ -1,0 +1,13 @@
+.secure {
+  background: var(--white); border-top: 1px solid var(--border);
+  padding: 16px 20px; display: flex; flex-direction: column; align-items: center;
+  gap: 8px; text-align: center;
+}
+
+.item { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+@media (min-width: 640px) {
+  .secure { flex-direction: row; justify-content: center; gap: 28px; flex-wrap: wrap; padding: 16px 24px; }
+  .item { font-size: 13px; }
+  .item:not(:last-child)::after { content: '·'; margin-left: 28px; color: var(--border); }
+}

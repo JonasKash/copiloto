@@ -1,0 +1,53 @@
+.section { padding: 56px 0; background: var(--bg); }
+
+.card {
+  background: var(--dark-grad); border: 1px solid var(--purple-800); border-radius: var(--r-lg);
+  padding: 36px 26px; max-width: 420px; margin: 0 auto;
+}
+
+.badge {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; padding: 4px 12px; border-radius: 980px; margin-bottom: 22px;
+  background: rgba(201,162,39,.15); color: var(--gold-light); border: 1px solid rgba(201,162,39,.3);
+}
+
+.name { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+
+.price { font-size: 48px; font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 6px; color: #fff; }
+.period {
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.div { height: 1px; margin: 24px 0; background: rgba(255,255,255,.1); }
+
+.feats { list-style: none; margin-bottom: 30px; }
+.feats li {
+  font-size: 14px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07);
+  display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.7);
+}
+.feats li:last-child { border-bottom: none; }
+
+.chk {
+  width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; background: rgba(201,162,39,.22);
+}
+.chk svg path { stroke: var(--gold-light); }
+
+.ctaBtn {
+  display: flex; align-items: center; justify-content: center; width: 100%;
+  padding: 15px; border-radius: 980px; font-family: inherit; font-size: 16px; font-weight: 700;
+  border: none; cursor: pointer; text-decoration: none; transition: opacity .2s;
+  background: #fff; color: var(--black); min-height: 44px;
+}
+@media (hover: hover) {
+  .ctaBtn:hover { opacity: .9; }
+}
+
+.guarantee { text-align: center; font-size: 12px; margin-top: 12px; color: rgba(255,255,255,.3); }
+
+@media (min-width: 640px) {
+  .section { padding: 80px 0; }
+  .card { padding: 44px; }
+  .price { font-size: 56px; }
+}

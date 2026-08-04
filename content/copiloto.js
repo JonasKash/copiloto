@@ -217,6 +217,7 @@ const baseCopy = {
         p: 'Os agentes foram construídos pra rotina jurídica, com jurisprudência rastreável. Não é um chat que inventa citação.',
       },
     ],
+    ctaLabel: 'Quero implantar os 6 processos',
   },
 
   processos: [

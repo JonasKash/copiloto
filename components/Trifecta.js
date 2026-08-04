@@ -1,4 +1,4 @@
-import { copy } from '@/content/copiloto';
+import { copy, HOTMART_URL } from '@/content/copiloto';
 import styles from './Trifecta.module.css';
 
 export default function Trifecta() {
@@ -16,6 +16,11 @@ export default function Trifecta() {
               <p>{card.p}</p>
             </div>
           ))}
+        </div>
+        <div className={`${styles.ctaWrap} reveal`}>
+          <a href={HOTMART_URL} className="btn btn-black btn-large">
+            {trifecta.ctaLabel} →
+          </a>
         </div>
       </div>
     </section>

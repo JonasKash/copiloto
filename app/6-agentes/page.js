@@ -16,5 +16,5 @@ export default function SeisAgentesPage({ searchParams }) {
     ...copy,
     hero: { ...copy.hero, sub: personalizeSub(copy.hero.sub, searchParams) },
   };
-  return <SalesPage copy={personalized} />;
+  return <SalesPage copy={personalized} area={searchParams?.area} />;
 }

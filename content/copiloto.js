@@ -1,51 +1,32 @@
 export const HOTMART_URL =
   'https://pay.hotmart.com/V105994251O?off=7xe30h5v&bid=1785716839200';
 
-// Hero e Enemy mudam de acordo com a dor que o advogado apontou no diagnóstico.
-// O resto da página (método, agentes, mentor, preço, FAQ) é o mesmo, porque a
-// transformação vendida (Escritório Artesanal -> Escritório Inteligente) é a mesma.
+// Hero muda de acordo com a dor que o advogado apontou no diagnóstico.
+// O resto da página é o mesmo, porque a transformação vendida
+// (Escritório Artesanal -> Escritório Processual) é a mesma.
+// Preço não aparece no Hero nem na proof bar de propósito: só é revelado
+// perto do fim, depois que o problema e o método já foram estabelecidos.
 const heroVariants = {
   default: {
     h1: 'Seu escritório trabalha pra você. Ou você trabalha pra ele?',
     sub:
       'O maior gargalo não é falta de cliente. É que pesquisa, petição, contrato, prazo, risco e honorários ainda dependem só de você. Os 6 agentes assumem o repetitivo pra você virar estrategista, não operador.',
-    ctaPrimary: 'Quero meus 6 agentes por R$ 27',
+    ctaPrimary: 'Quero sair do Escritório Artesanal',
     ctaSecondary: 'Ver os 6 agentes',
   },
   atendimento: {
     h1: 'Quanto custa um cliente perdido por demora na resposta?',
     sub:
-      'Enquanto você pesquisa jurisprudência ou redige do zero, ele já está falando com outro escritório. Escritório Inteligente responde rápido porque automatizou o repetitivo, não porque contratou mais gente.',
-    ctaPrimary: 'Quero responder mais rápido por R$ 27',
+      'Enquanto você pesquisa jurisprudência ou redige do zero, ele já está falando com outro escritório. Um Escritório Processual responde rápido porque automatizou o repetitivo, não porque contratou mais gente.',
+    ctaPrimary: 'Quero responder mais rápido',
     ctaSecondary: 'Ver os 6 agentes',
   },
   peticao: {
     h1: 'Petição pronta em minutos. Não em horas.',
     sub:
       'Nada de folha em branco. O Redator de Petições monta a peça com memória do processo, e mais 5 agentes cuidam de pesquisa, contrato, prazo, risco e honorários. Menos tempo na tarefa repetitiva, mais tempo na estratégia do caso.',
-    ctaPrimary: 'Quero petições mais rápidas por R$ 27',
+    ctaPrimary: 'Quero petições mais rápidas',
     ctaSecondary: 'Ver os 6 agentes',
-  },
-};
-
-const enemyVariants = {
-  default: {
-    h: 'O maior gargalo não é falta de cliente. É que tudo ainda depende de você.',
-    p:
-      'Pesquisar jurisprudência toma a manhã. Redigir a petição toma a tarde. E o prazo do processo do mês passado quase passou direto, porque ninguém lembrou.',
-    quote: 'Você estudou pra advogar, não pra ser o único fio que sustenta o escritório.',
-  },
-  atendimento: {
-    h: 'Escritório Artesanal responde quando dá. Escritório Inteligente responde rápido, sempre.',
-    p:
-      'Não é falta de vontade de responder rápido. É que a resposta boa exige pesquisa, contexto do caso, atenção. Isso consome o tempo que devia ir pro atendimento.',
-    quote: 'Cliente rápido não é cliente mal atendido. É cliente que não fica esperando à toa.',
-  },
-  peticao: {
-    h: 'Escritório Artesanal recomeça do zero. Escritório Inteligente reaproveita o que já construiu.',
-    p:
-      'Mesmo caso parecido com outro que você já fez mês passado, mas a peça nasce em branco de novo. Pesquisa, estrutura, fundamentação: tudo refeito, sempre.',
-    quote: 'A petição não devia ser o gargalo. Devia ser a parte fácil.',
   },
 };
 
@@ -53,13 +34,13 @@ const baseCopy = {
   nav: {
     logo: 'Copiloto Jurídico',
     links: [
+      { href: '#perfis', label: 'Seu perfil' },
       { href: '#metodo', label: 'O Método' },
       { href: '#agentes', label: 'Os 6 agentes' },
       { href: '#mentor', label: 'Quem criou' },
-      { href: '#preco', label: 'Acesso' },
       { href: '#faq', label: 'Dúvidas' },
     ],
-    ctaLabel: 'Garantir acesso',
+    ctaLabel: 'Fazer o diagnóstico',
   },
 
   hero: {
@@ -69,7 +50,7 @@ const baseCopy = {
   proofBar: [
     { num: '6', label: 'agentes especializados' },
     { num: '80%', label: 'do trabalho repetitivo automatizado' },
-    { num: 'R$27', label: 'pagamento único, sem mensalidade' },
+    { num: '5', label: 'passos no Método Escritório Processual' },
     { num: 'min', label: 'para ativar e começar a usar' },
   ],
 
@@ -79,35 +60,92 @@ const baseCopy = {
       'Se uma tarefa jurídica se repete toda semana, ela não deveria tomar mais que 15 minutos do seu dia. Pesquisa, petição, contrato, prazo, risco, honorários: ou você monta um processo pra isso, ou continua refazendo o mesmo trabalho pra sempre.',
   },
 
-  enemy: {
-    eyebrow: 'O problema',
-    bad: {
-      label: 'Escritório Artesanal',
-      items: [
-        'Horas procurando jurisprudência em três sites diferentes',
-        'Petição em branco, começando do zero toda vez',
-        'Prazo anotado em post-it ou agenda que ninguém revisa',
-        'Contrato revisado por cima, sem tempo pra comparar cláusula por cláusula',
-        'Honorários calculados no chute, com medo de cobrar errado',
-        'Cliente esperando resposta que só sai no fim do dia',
-      ],
+  perfis: {
+    eyebrow: 'Qual desses é o seu escritório?',
+    h: 'Você provavelmente já se reconheceu em um desses perfis.',
+    items: [
+      {
+        num: 'Perfil 01',
+        name: 'O Escritório Dependente',
+        tagline: 'Tudo passa por você.',
+        headline: ['Seu escritório não funciona.', 'Você funciona por ele.'],
+        text: [
+          'Você responde clientes. Você revisa petições. Você tira dúvidas da equipe. Você acompanha prazos. Você decide praticamente tudo.',
+          'Quando você para, o escritório desacelera junto.',
+          'O problema nunca foi falta de competência. O problema é que seu escritório depende mais de você do que de um processo.',
+          'Esse é o primeiro sinal de um Escritório Artesanal.',
+        ],
+        cta: 'Descubra como transformar dependência em processo.',
+      },
+      {
+        num: 'Perfil 02',
+        name: 'O Escritório Sobrecarregado',
+        headline: ['O problema não é o volume.', 'É a repetição.'],
+        text: [
+          'Responder cliente. Pesquisar jurisprudência. Montar petição. Revisar contrato. Calcular honorários.',
+          'Você faz as mesmas tarefas dezenas de vezes por semana. Não porque elas são difíceis. Mas porque nunca foram organizadas.',
+          'Enquanto isso, o atendimento atrasa, os clientes esperam, e sua agenda continua cheia.',
+        ],
+        cta: 'Existe um jeito diferente de operar.',
+      },
+      {
+        num: 'Perfil 03',
+        name: 'O Escritório Estagnado',
+        headline: ['Você não consegue crescer.', 'Porque cada novo cliente cria mais trabalho.'],
+        text: [
+          'Mais clientes deveriam significar mais faturamento. Mas hoje, cada novo processo significa mais mensagens, mais documentos, mais revisões, mais horas.',
+          'Seu escritório cresce. Sua liberdade diminui.',
+          'Isso acontece porque você aumentou o volume, mas nunca mudou a operação.',
+        ],
+        cta: 'Conheça o Método Escritório Processual.',
+      },
+      {
+        num: 'Perfil 04',
+        name: 'O Escritório sem Organização',
+        headline: ['Você não perdeu tempo.', 'Você perdeu controle.'],
+        text: [
+          'Arquivos espalhados. Prazos em vários lugares. WhatsApp misturado. Modelos diferentes. Equipe perguntando a mesma coisa.',
+          'Nada disso parece grave. Até o dia em que um prazo passa. Ou um cliente desiste. Ou você percebe que trabalha mais hoje do que há cinco anos.',
+        ],
+        cta: 'Descubra onde está o gargalo.',
+      },
+    ],
+  },
+
+  area: {
+    eyebrow: 'Personalizado pra sua área',
+    fallback: {
+      h: 'Isso vale pra qualquer área do direito.',
+      text:
+        'Trabalhista, família, previdenciário, empresarial: se sua rotina tem pesquisa, petição, contrato, prazo ou atendimento repetitivo, o Escritório Processual se aplica.',
     },
-    good: {
-      label: 'Escritório Inteligente',
-      items: [
-        'Pesquisador traz jurisprudência do STJ, STF e TRTs com fonte rastreável',
-        'Redator monta a petição com memória do processo, não do zero',
-        'Gerenciador de Prazos avisa antes, não depois',
-        'Editor de Contratos compara minutas cláusula por cláusula',
-        'Calculador de Honorários usa tabela OAB e jurimetria',
-        'Resposta pronta pra revisar no mesmo dia',
-      ],
+    items: {
+      Trabalhista: {
+        h: 'Trabalhista',
+        text:
+          'Hoje você atua em uma das áreas com maior volume repetitivo da advocacia. Reclamações parecidas, petições semelhantes, jurisprudência consultada diariamente. Quanto maior o volume, mais importante se torna criar processos.',
+      },
+      'Família': {
+        h: 'Família',
+        text:
+          'Além da técnica jurídica, você administra ansiedade. Clientes querem respostas rápidas. Enquanto você pesquisa, eles imaginam que foram esquecidos. Seu escritório precisa responder na velocidade que o cliente espera.',
+      },
+      'Previdenciário': {
+        h: 'Previdenciário',
+        text:
+          'Cada atendimento envolve documentos, análises, regras, histórico. Quanto mais manual esse processo continua, mais caro fica crescer.',
+      },
+      Empresarial: {
+        h: 'Empresarial',
+        text:
+          'Empresas não contratam apenas conhecimento jurídico. Contratam previsibilidade. Um escritório organizado transmite segurança antes mesmo da primeira reunião.',
+      },
     },
   },
 
   metodo: {
-    eyebrow: 'Como funciona a transformação',
-    h: 'O Método E.I. — Escritório Inteligente.',
+    eyebrow: 'Existe um método',
+    h: 'O Método Escritório Processual.',
     p: 'Não é sobre usar mais tecnologia. É sobre parar de ser o gargalo do próprio escritório.',
     steps: [
       { num: '01', h: 'Diagnosticar', p: 'Onde o seu tempo está sendo perdido de verdade.' },
@@ -116,6 +154,27 @@ const baseCopy = {
       { num: '04', h: 'Automatizar', p: 'Os 6 agentes assumem pesquisa, petição, contrato, prazo, risco e honorários.' },
       { num: '05', h: 'Escalar', p: 'Mais processo, mesmo tempo. Sem contratar antes da hora.' },
     ],
+  },
+
+  checklist: {
+    eyebrow: 'A diferença',
+    h: 'O que um Escritório Processual faz diferente?',
+    items: [
+      'Não depende da memória do advogado.',
+      'Não começa tudo do zero.',
+      'Não pesquisa duas vezes a mesma coisa.',
+      'Não responde clientes no fim do expediente.',
+      'Não perde tempo procurando arquivos.',
+      'Não cresce contratando antes de organizar.',
+    ],
+  },
+
+  copilotoIntro: {
+    eyebrow: 'A ferramenta',
+    h: 'O Copiloto Jurídico.',
+    sub: 'O sistema operacional do Escritório Processual.',
+    text:
+      'Os seis agentes não existem pra substituir o advogado. Eles existem pra que tarefas repetitivas deixem de depender exclusivamente dele.',
   },
 
   trifecta: {
@@ -130,7 +189,7 @@ const baseCopy = {
       {
         vs: 'vs Contratar estagiário',
         h3: 'Mais barato.',
-        p: 'Sem folha de pagamento, sem treinamento, sem rotatividade. R$27 uma vez só contra um salário todo mês.',
+        p: 'Sem folha de pagamento, sem treinamento, sem rotatividade.',
       },
       {
         vs: 'vs IA genérica (ChatGPT)',
@@ -218,25 +277,7 @@ const baseCopy = {
     credentials: 'OAB/SP 398.640',
     instagram: '@wbonadiofilho',
     quote:
-      'Não criei uma IA pra substituir advogado. Criei o primeiro passo pra sair do Escritório Artesanal e virar um Escritório Inteligente.',
-  },
-
-  whoFor: {
-    eyebrow: 'Pra quem é',
-    h: 'Feito pra quem quer sair do Escritório Artesanal, não pra quem só quer testar IA.',
-    cards: [
-      { icon: 'scale', h3: 'Advogado autônomo', p: 'Você é a banca inteira. Precisa de alavancagem, não de mais uma tarefa.' },
-      { icon: 'building', h3: 'Pequeno escritório', p: 'Poucos sócios, muitos processos. Os agentes assumem o volume repetitivo.' },
-      { icon: 'chat', h3: 'Atendimento por WhatsApp', p: 'Responde cliente rápido sem abrir mão da precisão técnica.' },
-      { icon: 'searchDoc', h3: 'Sem estagiário disponível', p: 'A pesquisa e a triagem que o estagiário faria, o agente faz primeiro.' },
-      { icon: 'clock', h3: 'Sobrecarregado de prazos', p: 'Quem já perdeu ou quase perdeu um prazo sabe o preço disso.' },
-      { icon: 'trendUp', h3: 'Quer recuperar tempo', p: 'Menos hora gasta em tarefa repetitiva, mais hora em estratégia e cliente.' },
-    ],
-    notFor: [
-      'Banca grande com equipe de TI própria',
-      'Quem busca substituir o advogado pela IA',
-      'Quem não revisa o que assina',
-    ],
+      'Não criei uma IA pra substituir advogado. Criei o primeiro passo pra sair do Escritório Artesanal e virar um Escritório Processual.',
   },
 
   faq: {
@@ -271,7 +312,7 @@ const baseCopy = {
   },
 
   pricing: {
-    eyebrow: 'Acesso',
+    eyebrow: 'O primeiro passo',
     h: 'Pagamento único. Os 6 agentes. Sem mensalidade.',
     p: 'Você paga uma vez, pela Hotmart, e libera os 6 agentes na hora.',
     plan: {
@@ -295,7 +336,7 @@ const baseCopy = {
 
   finalCta: {
     eyebrow: 'Pronto pra parar de ser o gargalo do seu escritório?',
-    h: 'Do Escritório Artesanal pro Escritório Inteligente, hoje.',
+    h: 'Do Escritório Artesanal pro Escritório Processual, hoje.',
     p: 'Cada dia sem os 6 agentes é mais uma pesquisa manual, mais uma petição do zero, mais um prazo pra torcer que não passou.',
     ctaPrimary: 'Quero meus 6 agentes por R$ 27',
     ctaSecondary: 'Ver os 6 agentes de novo',
@@ -310,15 +351,15 @@ const baseCopy = {
 
   footer: {
     brand: 'Copiloto Jurídico',
-    tagline: 'O sistema operacional do Escritório Inteligente, supervisionado por um advogado.',
+    tagline: 'O sistema operacional do Escritório Processual, supervisionado por um advogado.',
     columns: [
       {
         title: 'Produto',
         links: [
+          { href: '#perfis', label: 'Seu perfil' },
           { href: '#metodo', label: 'O Método' },
           { href: '#agentes', label: 'Os 6 agentes' },
           { href: '#mentor', label: 'Quem criou' },
-          { href: '#preco', label: 'Acesso' },
         ],
       },
       {
@@ -343,11 +384,9 @@ const baseCopy = {
 
 export function getCopy(variant = 'default') {
   const hero = heroVariants[variant] || heroVariants.default;
-  const enemy = enemyVariants[variant] || enemyVariants.default;
   return {
     ...baseCopy,
     hero: { ...baseCopy.hero, ...hero },
-    enemy: { ...baseCopy.enemy, ...enemy },
   };
 }
 

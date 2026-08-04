@@ -43,10 +43,6 @@ const baseCopy = {
     ctaLabel: 'Fazer o diagnóstico',
   },
 
-  hero: {
-    proof: 'Supervisionado por um advogado registrado na OAB/SP',
-  },
-
   proofBar: [
     { num: '6', label: 'processos implantados' },
     { num: '80%', label: 'do trabalho repetitivo automatizado' },

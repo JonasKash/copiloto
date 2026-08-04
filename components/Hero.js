@@ -23,10 +23,6 @@ export default function Hero({ copy = defaultCopy }) {
               {hero.ctaSecondary}
             </a>
           </div>
-          <div className={styles.proof}>
-            <span className={styles.badgeSmall}>OAB/SP 398.640</span>
-            <span>{hero.proof}</span>
-          </div>
         </div>
 
         <div className={`${styles.visual} reveal`}>

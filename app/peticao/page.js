@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Petição pronta em minutos — Copiloto Jurídico',
   description:
-    'Chega de começar cada petição do zero. O Redator de Petições monta a peça com memória do processo, mais 5 agentes pra pesquisa, contrato, prazo, risco e honorários. Pagamento único de R$27.',
+    'Chega de começar cada petição do zero. O Redator de Petições monta a peça com memória do processo. É um dos 6 processos do Escritório Processual, ao lado de pesquisa, contrato, prazo, risco e honorários. Pagamento único de R$27.',
 };
 
 export default function PeticaoPage({ searchParams }) {

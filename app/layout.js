@@ -15,13 +15,13 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://copilotojuridico.com.br'),
-  title: 'Copiloto Jurídico — 6 agentes de IA para o seu escritório',
+  title: 'Copiloto Jurídico — o Escritório Processual, na prática',
   description:
-    'Pesquisa de jurisprudência, redação de petições, revisão de contratos, controle de prazos, jurimetria e cálculo de honorários. Pagamento único de R$27, supervisionado pelo Dr. Wladmir Bonadio Filho (OAB/SP 398.640).',
+    'Pesquisa, petição, contrato, prazo, risco e honorários, implantados como processo. Pagamento único de R$27, supervisionado pelo Dr. Wladmir Bonadio Filho (OAB/SP 398.640).',
   openGraph: {
-    title: 'Copiloto Jurídico — 6 agentes de IA para o seu escritório',
+    title: 'Copiloto Jurídico — o Escritório Processual, na prática',
     description:
-      'O escritório que você monta sozinho, com 6 agentes de IA fazendo o trabalho repetitivo por você.',
+      'O Método Escritório Processual, operacionalizado pelo Copiloto Jurídico. 6 processos, um só escritório que não depende só de você.',
     locale: 'pt_BR',
     type: 'website',
   },

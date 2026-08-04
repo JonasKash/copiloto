@@ -5,9 +5,9 @@ import { personalizeSub } from '@/lib/personalize';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Copiloto Jurídico — 6 agentes de IA para o seu escritório',
+  title: 'Copiloto Jurídico — 6 processos do Escritório Processual',
   description:
-    'Pesquisa de jurisprudência, redação de petições, revisão de contratos, controle de prazos, jurimetria e cálculo de honorários. Pagamento único de R$27.',
+    'Pesquisa, petição, contrato, prazo, risco e honorários, implantados como processo, não como tarefa manual. Pagamento único de R$27.',
 };
 
 export default function SeisAgentesPage({ searchParams }) {

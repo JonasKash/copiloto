@@ -7,7 +7,7 @@ export default function Processos() {
       <div className="wrap">
         <p className="eyebrow reveal">Os processos, não as ferramentas</p>
         <h2 className="section-h reveal">Seis processos que deixam de depender só de você.</h2>
-        <p className="section-p reveal">Cada agente abaixo é só o mecanismo. O que muda o escritório é o processo por trás dele.</p>
+        <p className="section-p reveal">Cada ferramenta abaixo é só o mecanismo. O que muda o escritório é o processo por trás dela.</p>
       </div>
 
       {copy.processos.map((processo, i) => (
@@ -18,9 +18,7 @@ export default function Processos() {
             <p className={`${styles.problem} reveal`}>{processo.problem}</p>
             <p className={`${styles.context} reveal`}>{processo.context}</p>
             <p className={`${styles.transform} reveal`}>{processo.transform}</p>
-            <p className={`${styles.agentLine} reveal`}>
-              O Copiloto opera esse processo através do <strong>{processo.agent}</strong>.
-            </p>
+            <p className={`${styles.agentLine} reveal`}>{processo.agentLine}</p>
             <ul className={`${styles.results} reveal`}>
               {processo.results.map((item) => (
                 <li key={item}>{item}</li>

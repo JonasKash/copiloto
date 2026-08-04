@@ -7,9 +7,10 @@ export default function Checklist() {
     <section className={styles.section}>
       <div className="wrap">
         <p className="eyebrow reveal" style={{ textAlign: 'center' }}>{checklist.eyebrow}</p>
-        <h2 className="section-h reveal" style={{ textAlign: 'center', margin: '0 auto 32px' }}>
+        <h2 className="section-h reveal" style={{ textAlign: 'center', margin: '0 auto 12px' }}>
           {checklist.h}
         </h2>
+        <p className={`${styles.intro} reveal`}>{checklist.intro}</p>
         <div className={`${styles.list} reveal`}>
           {checklist.items.map((item) => (
             <div key={item} className={styles.item}>

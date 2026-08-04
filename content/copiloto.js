@@ -10,23 +10,23 @@ const heroVariants = {
   default: {
     h1: 'Seu escritório cresce. Ou só você trabalha mais?',
     sub:
-      'A maioria dos escritórios confunde as duas coisas. Pesquisa, petição, contrato, prazo, risco e honorários ainda dependem só de você. Os 6 agentes existem pra isso parar de ser verdade.',
+      'A maioria dos escritórios confunde as duas coisas. Pesquisa, petição, contrato, prazo, risco e honorários ainda dependem só de você. É pra isso parar de ser verdade que existe o Método Escritório Processual.',
     ctaPrimary: 'Quero sair do Escritório Artesanal',
-    ctaSecondary: 'Ver os 6 agentes',
+    ctaSecondary: 'Ver os 6 processos',
   },
   atendimento: {
     h1: 'Você não tem um problema de atendimento. Tem um problema de operação.',
     sub:
-      'Enquanto você pesquisa jurisprudência ou redige do zero, o cliente espera e desiste. Isso não se resolve respondendo mais rápido no talento. Se resolve tirando o repetitivo do seu caminho.',
+      'Enquanto você pesquisa jurisprudência ou redige do zero, o cliente espera e desiste. Isso não se resolve com você tentando ser mais rápido. Se resolve tirando o repetitivo do seu caminho.',
     ctaPrimary: 'Quero responder mais rápido',
-    ctaSecondary: 'Ver os 6 agentes',
+    ctaSecondary: 'Ver os 6 processos',
   },
   peticao: {
     h1: 'Não é que você é lento pra escrever petição. É que ela sempre começa do zero.',
     sub:
-      'O Redator de Petições monta a peça com memória do processo, e mais 5 agentes cuidam de pesquisa, contrato, prazo, risco e honorários. Isso é diferença de método, não de esforço.',
+      'O Redator de Petições monta a peça com memória do processo. É um dos 6 processos que cuidam de pesquisa, contrato, prazo, risco e honorários. Isso é diferença de método, não de esforço.',
     ctaPrimary: 'Quero petições mais rápidas',
-    ctaSecondary: 'Ver os 6 agentes',
+    ctaSecondary: 'Ver os 6 processos',
   },
 };
 
@@ -36,7 +36,7 @@ const baseCopy = {
     links: [
       { href: '#perfis', label: 'Seu nível' },
       { href: '#metodo', label: 'O Método' },
-      { href: '#agentes', label: 'Os 6 agentes' },
+      { href: '#agentes', label: 'Os 6 processos' },
       { href: '#mentor', label: 'Quem criou' },
       { href: '#faq', label: 'Dúvidas' },
     ],
@@ -48,7 +48,7 @@ const baseCopy = {
   },
 
   proofBar: [
-    { num: '6', label: 'agentes especializados' },
+    { num: '6', label: 'processos implantados' },
     { num: '80%', label: 'do trabalho repetitivo automatizado' },
     { num: '5', label: 'passos no Método Escritório Processual' },
     { num: 'min', label: 'para ativar e começar a usar' },
@@ -176,7 +176,7 @@ const baseCopy = {
       { num: '01', h: 'Mapear', p: 'Onde o seu escritório perde tempo de verdade.' },
       { num: '02', h: 'Padronizar', p: 'Tudo que hoje depende só da sua memória.' },
       { num: '03', h: 'Processualizar', p: 'Criar um fluxo único pra cada atividade que se repete.' },
-      { num: '04', h: 'Automatizar', p: 'Só depois entram os 6 agentes: pesquisa, petição, contrato, prazo, risco e honorários.' },
+      { num: '04', h: 'Automatizar', p: 'Só depois entra o Copiloto, executando os processos que você já mapeou e padronizou.' },
       { num: '05', h: 'Escalar', p: 'Crescer sem aumentar o caos.' },
     ],
   },
@@ -184,10 +184,9 @@ const baseCopy = {
   checklist: {
     eyebrow: 'A diferença',
     h: 'O que um Escritório Processual faz diferente?',
+    intro: 'Não é sobre fazer mais rápido. É sobre não precisar mais fazer do mesmo jeito.',
     items: [
       'Não depende da memória do advogado.',
-      'Não começa tudo do zero.',
-      'Não pesquisa duas vezes a mesma coisa.',
       'Não responde clientes no fim do expediente.',
       'Não perde tempo procurando arquivos.',
       'Não cresce contratando antes de organizar.',
@@ -237,6 +236,7 @@ const baseCopy = {
       transform:
         'No Escritório Processual, a pesquisa deixa de depender do tempo disponível do advogado. Ela passa a fazer parte do fluxo do escritório.',
       agent: 'Pesquisador',
+      agentLine: 'O Copiloto assume esse processo com o Pesquisador.',
       results: ['Jurisprudência organizada', 'Fonte rastreável em cada citação', 'Resultado pronto pra revisão'],
     },
     {
@@ -245,8 +245,9 @@ const baseCopy = {
       problem:
         'Toda petição criada do zero é sinal de que seu escritório ainda depende mais da memória do advogado do que de um processo.',
       context: 'Cada caso novo devia aproveitar o que o escritório já sabe fazer, não recomeçar do nada.',
-      transform: 'No Escritório Processual, conhecimento não se perde. Ele é reaproveitado.',
+      transform: 'Aqui, o conhecimento não se perde. Ele é reaproveitado a cada novo caso.',
       agent: 'Redator de Petições',
+      agentLine: 'Quem executa esse processo é o Redator de Petições.',
       results: ['Case Memory por processo', 'Modelos prontos por tipo de ação', 'Peça pronta pra revisão e protocolo'],
     },
     {
@@ -254,9 +255,9 @@ const baseCopy = {
       h: 'Revisão Contratual',
       problem: 'Um contrato não deveria depender só da atenção de quem está revisando.',
       context: 'Cláusula de risco escondida no meio do texto é o tipo de erro que passa despercebido numa revisão cansada.',
-      transform:
-        'No Escritório Processual, o risco é identificado antes da assinatura, não depois que o problema já aconteceu.',
+      transform: 'O risco passa a ser identificado antes da assinatura. Não depois que o problema já aconteceu.',
       agent: 'Editor de Contratos',
+      agentLine: 'O Editor de Contratos cuida desse processo pra você.',
       results: ['Comparação entre versões da minuta', 'Cláusulas de risco marcadas', 'Revisão em minutos, não em horas'],
     },
     {
@@ -264,8 +265,9 @@ const baseCopy = {
       h: 'Gestão de Prazos',
       problem: 'O prazo não pode morar na memória do advogado.',
       context: 'Precisa morar no processo, não num post-it ou numa agenda que só você olha.',
-      transform: 'No Escritório Processual, cada prazo tem um alerta automático, antes do vencimento, não depois.',
+      transform: 'Cada prazo ganha um alerta automático, antes do vencimento, não depois.',
       agent: 'Gerenciador de Prazos',
+      agentLine: 'Esse processo roda com o Gerenciador de Prazos.',
       results: ['Alerta automático por processo', 'Lembrete manual configurável', 'Visão única de todos os prazos'],
     },
     {
@@ -273,8 +275,9 @@ const baseCopy = {
       h: 'Decisão Estratégica',
       problem: 'Recorrer ou negociar? No Escritório Artesanal, essa decisão nasce só da experiência.',
       context: 'E experiência sozinha erra. Principalmente sob pressão de prazo.',
-      transform: 'No Escritório Processual, essa decisão também considera dado: histórico da vara, probabilidade de êxito, custo-benefício.',
+      transform: 'A decisão passa a considerar dado, não só instinto: histórico da vara, probabilidade de êxito, custo-benefício.',
       agent: 'Analista de Riscos',
+      agentLine: 'Quem traz esses números é o Analista de Riscos.',
       results: ['Prognóstico por vara e por juiz', 'Histórico de decisões similares', 'Apoio pra decidir recorrer ou acordar'],
     },
     {
@@ -282,8 +285,9 @@ const baseCopy = {
       h: 'Processo Comercial',
       problem: 'Honorários não deveriam depender do "feeling".',
       context: 'Devem seguir critério claro, que você consegue defender diante do cliente sem hesitar.',
-      transform: 'No Escritório Processual, o valor nasce da tabela OAB cruzada com jurimetria, não do chute.',
+      transform: 'O valor nasce da tabela OAB cruzada com jurimetria. Não do chute.',
       agent: 'Calculador de Honorários',
+      agentLine: 'O Calculador de Honorários fecha esse processo.',
       results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
     },
   ],
@@ -302,7 +306,7 @@ const baseCopy = {
     eyebrow: 'Quem está por trás',
     h: 'Criado e supervisionado por um advogado, não só por programadores.',
     p:
-      'Os 6 agentes nasceram da rotina real de um escritório. Cada um foi desenhado pra resolver um gargalo que o Dr. Wladmir via todo dia na própria prática, tomando tempo que devia ir pro que realmente importa: o caso do cliente.',
+      'Os 6 processos nasceram da rotina real de um escritório. Cada um resolve um gargalo que o Dr. Wladmir via todo dia na própria prática, tomando tempo que devia ir pro que realmente importa: o caso do cliente.',
     name: 'Dr. Wladmir Bonadio Filho',
     credentials: 'OAB/SP 398.640',
     instagram: '@wbonadiofilho',
@@ -328,7 +332,7 @@ const baseCopy = {
       },
       {
         q: 'Funciona pra qualquer área do direito?',
-        a: 'Os 6 agentes cobrem rotina cível, trabalhista e contratual. Se sua área usa pesquisa, petição, contrato, prazo ou cálculo, eles se aplicam.',
+        a: 'Os 6 processos cobrem rotina cível, trabalhista e contratual. Se sua área usa pesquisa, petição, contrato, prazo ou cálculo, o Método se aplica.',
       },
       {
         q: 'A jurisprudência trazida pelo Pesquisador é confiável?',
@@ -369,8 +373,8 @@ const baseCopy = {
     eyebrow: 'Pronto pra parar de ser o gargalo do seu escritório?',
     h: 'Do Escritório Artesanal pro Escritório Processual, hoje.',
     p: 'Cada dia sem os 6 processos implantados é mais uma pesquisa manual, mais uma petição do zero, mais um prazo pra torcer que não passou.',
-    ctaPrimary: 'Quero meus 6 agentes por R$ 27',
-    ctaSecondary: 'Ver os 6 agentes de novo',
+    ctaPrimary: 'Quero implantar os 6 processos',
+    ctaSecondary: 'Ver os 6 processos de novo',
   },
 
   secureStrip: [
@@ -389,7 +393,7 @@ const baseCopy = {
         links: [
           { href: '#perfis', label: 'Seu nível' },
           { href: '#metodo', label: 'O Método' },
-          { href: '#agentes', label: 'Os 6 agentes' },
+          { href: '#agentes', label: 'Os 6 processos' },
           { href: '#mentor', label: 'Quem criou' },
         ],
       },

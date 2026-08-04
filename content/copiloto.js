@@ -8,23 +8,23 @@ export const HOTMART_URL =
 // perto do fim, depois que o problema e o método já foram estabelecidos.
 const heroVariants = {
   default: {
-    h1: 'Seu escritório cresce. Ou só você trabalha mais?',
+    h1: 'O escritório cresce. Mas quem trabalha mais continua sendo você.',
     sub:
-      'A maioria dos escritórios confunde as duas coisas. Pesquisa, petição, contrato, prazo, risco e honorários ainda dependem só de você. É pra isso parar de ser verdade que existe o Método Escritório Processual.',
+      'Pesquisa, petição, contrato, prazo, risco e honorários ainda dependem só de você. O Método Escritório Processual existe pra mudar exatamente essa conta.',
     ctaPrimary: 'Quero sair do Escritório Artesanal',
     ctaSecondary: 'Ver os 6 processos',
   },
   atendimento: {
-    h1: 'Você não tem um problema de atendimento. Tem um problema de operação.',
+    h1: 'Enquanto você pesquisa a resposta certa, o cliente já mandou mensagem pra outro escritório.',
     sub:
-      'Enquanto você pesquisa jurisprudência ou redige do zero, o cliente espera e desiste. Isso não se resolve com você tentando ser mais rápido. Se resolve tirando o repetitivo do seu caminho.',
+      'Isso não tem nada a ver com digitar mais rápido. Tem a ver com quanto trabalho manual ainda fica entre a pergunta do cliente e a sua resposta.',
     ctaPrimary: 'Quero responder mais rápido',
     ctaSecondary: 'Ver os 6 processos',
   },
   peticao: {
-    h1: 'Não é que você é lento pra escrever petição. É que ela sempre começa do zero.',
+    h1: 'Você abre um documento em branco toda vez que começa uma petição nova.',
     sub:
-      'O Redator de Petições monta a peça com memória do processo. É um dos 6 processos que cuidam de pesquisa, contrato, prazo, risco e honorários. Isso é diferença de método, não de esforço.',
+      'O Redator de Petições monta a peça com memória do processo. É um dos 6 processos que cuidam de pesquisa, contrato, prazo, risco e honorários, junto com o resto do Método.',
     ctaPrimary: 'Quero petições mais rápidas',
     ctaSecondary: 'Ver os 6 processos',
   },
@@ -62,40 +62,37 @@ const baseCopy = {
 
   niveis: {
     eyebrow: 'Em qual estágio seu escritório está?',
-    h: 'Isso não é uma lista de perfis. É um diagnóstico.',
+    h: 'Encontre o nível que mais se parece com o seu escritório hoje.',
     items: [
       {
         level: 'Nível 1',
         name: 'Operação Dependente',
         state: 'problem',
         tagline: 'Tudo passa por você.',
-        headline: ['Seu escritório não funciona.', 'Você funciona por ele.'],
+        headline: ['Se você parar um dia,', 'o escritório para junto.'],
         text: [
           'Você responde clientes. Você revisa petições. Você tira dúvidas da equipe. Você acompanha prazos. Você decide praticamente tudo.',
-          'Quando você para, o escritório desacelera junto.',
-          'O problema nunca foi falta de competência. O problema é que seu escritório depende mais de você do que de um processo.',
+          'Isso não tem a ver com falta de competência. Tem a ver com um escritório que ainda depende mais de você do que de um processo.',
         ],
       },
       {
         level: 'Nível 2',
         name: 'Operação Sobrecarregada',
         state: 'problem',
-        headline: ['O problema não é o volume.', 'É a repetição.'],
+        headline: ['Você faz a mesma tarefa', 'dezenas de vezes por semana.'],
         text: [
           'Responder cliente. Pesquisar jurisprudência. Montar petição. Revisar contrato. Calcular honorários.',
-          'Você faz as mesmas tarefas dezenas de vezes por semana. Não porque elas são difíceis. Mas porque nunca foram organizadas.',
-          'Enquanto isso, o atendimento atrasa, os clientes esperam, e sua agenda continua cheia.',
+          'Não porque elas são difíceis. Porque nunca foram organizadas. Enquanto isso, o atendimento atrasa, os clientes esperam, e sua agenda continua cheia.',
         ],
       },
       {
         level: 'Nível 3',
         name: 'Operação Estagnada',
         state: 'problem',
-        headline: ['Você não consegue crescer.', 'Porque cada novo cliente cria mais trabalho.'],
+        headline: ['Cada cliente novo devia trazer lucro.', 'Na prática, traz mais trabalho.'],
         text: [
-          'Mais clientes deveriam significar mais faturamento. Mas hoje, cada novo processo significa mais mensagens, mais documentos, mais revisões, mais horas.',
-          'Seu escritório cresce. Sua liberdade diminui.',
-          'Isso acontece porque você aumentou o volume, mas nunca mudou a operação.',
+          'Mais mensagens, mais documentos, mais revisões, mais horas. O faturamento sobe, e junto com ele sobe também o tamanho da sua agenda.',
+          'Isso acontece porque o volume aumentou, mas a operação continua a mesma de sempre.',
         ],
       },
       {
@@ -103,9 +100,9 @@ const baseCopy = {
         name: 'Operação Processual',
         state: 'goal',
         tagline: 'O nível pra onde o Método leva.',
-        headline: ['Seu escritório começa a funcionar', 'sem depender só de você.'],
+        headline: ['O escritório roda', 'mesmo quando você não está.'],
         text: [
-          'Não é sobre trabalhar menos por sorte. É sobre ter processo pra cada coisa que hoje só existe na sua cabeça.',
+          'Isso significa ter processo pra cada coisa que hoje só existe na sua cabeça.',
           'Cliente atendido, petição redigida, prazo acompanhado, contrato revisado: acontecendo mesmo quando você está numa audiência, num compromisso, ou de férias.',
         ],
         cta: 'Descubra como chegar no Nível 4.',
@@ -171,7 +168,7 @@ const baseCopy = {
   metodo: {
     eyebrow: 'Existe um método',
     h: 'O Método Escritório Processual™.',
-    p: 'Não é sobre usar mais tecnologia. É sobre parar de ser o gargalo do próprio escritório.',
+    p: 'Tecnologia sozinha não organiza nada. Quem organiza é o método, o Copiloto entra só no quarto passo.',
     steps: [
       { num: '01', h: 'Mapear', p: 'Onde o seu escritório perde tempo de verdade.' },
       { num: '02', h: 'Padronizar', p: 'Tudo que hoje depende só da sua memória.' },
@@ -184,7 +181,7 @@ const baseCopy = {
   checklist: {
     eyebrow: 'A diferença',
     h: 'O que um Escritório Processual faz diferente?',
-    intro: 'Não é sobre fazer mais rápido. É sobre não precisar mais fazer do mesmo jeito.',
+    intro: 'Cada item abaixo já deixou de ser um problema pra quem virou Escritório Processual.',
     items: [
       'Não depende da memória do advogado.',
       'Não responde clientes no fim do expediente.',
@@ -296,9 +293,9 @@ const baseCopy = {
     eyebrow: 'Antes de você decidir',
     h: 'O que você está comprando por R$27?',
     text: [
-      'Você não está comprando seis agentes.',
-      'Você está dando o primeiro passo pra transformar um Escritório Artesanal em um Escritório Processual.',
-      'Os agentes são só a ferramenta. A verdadeira mudança acontece quando sua operação deixa de depender exclusivamente de você.',
+      'Tecnicamente, seis agentes de IA.',
+      'Mas o que muda de verdade quando você compra é outra coisa: o primeiro passo pra sair do Escritório Artesanal.',
+      'A ferramenta é só o meio. A mudança real acontece quando sua operação para de depender só de você.',
     ],
   },
 

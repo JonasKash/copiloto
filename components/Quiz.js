@@ -64,10 +64,10 @@ export default function Quiz() {
           <div className={styles.intro}>
             <p className={styles.eyebrow}>Diagnóstico Escritório Processual</p>
             <h1 className={styles.h1}>
-              Seu escritório cresce... <em>ou você apenas trabalha mais?</em>
+              Seu escritório fatura mais a cada ano. <em>Sua semana também fica mais cheia?</em>
             </h1>
             <p className={styles.p}>
-              Você pode estar confundindo crescimento com sobrecarga. Na maioria dos escritórios, o problema não é falta de cliente: é que tudo ainda depende do advogado. Responda 3 perguntas e descubra em qual nível o seu está.
+              Na maioria dos escritórios, tudo ainda depende do advogado: pesquisa, petição, prazo, atendimento. Responda 3 perguntas rápidas e descubra em qual nível o seu está.
             </p>
             <div className={styles.trust}>
               <span>⏱ Menos de 1 minuto</span>

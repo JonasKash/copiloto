@@ -62,12 +62,12 @@ export default function Quiz() {
 
         <section className={styles.grid}>
           <div className={styles.intro}>
-            <p className={styles.eyebrow}>Diagnóstico Escritório Inteligente</p>
+            <p className={styles.eyebrow}>Diagnóstico Escritório Processual</p>
             <h1 className={styles.h1}>
-              Descubra se seu escritório ainda é um <em>Escritório Artesanal.</em>
+              Seu escritório cresce... <em>ou você apenas trabalha mais?</em>
             </h1>
             <p className={styles.p}>
-              Responda 3 perguntas rápidas e descubra, na hora, onde seu escritório está perdendo tempo e o primeiro passo pra virar um Escritório Inteligente.
+              Você pode estar confundindo crescimento com sobrecarga. Na maioria dos escritórios, o problema não é falta de cliente: é que tudo ainda depende do advogado. Responda 3 perguntas e descubra em qual nível o seu está.
             </p>
             <div className={styles.trust}>
               <span>⏱ Menos de 1 minuto</span>

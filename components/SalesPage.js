@@ -2,13 +2,15 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import ProofBar from '@/components/ProofBar';
 import FifteenRule from '@/components/FifteenRule';
-import Perfis from '@/components/Perfis';
+import Niveis from '@/components/Niveis';
 import AreaBlock from '@/components/AreaBlock';
+import ImpostoInvisivel from '@/components/ImpostoInvisivel';
+import CrescerVsTrabalhar from '@/components/CrescerVsTrabalhar';
 import Metodo from '@/components/Metodo';
 import Checklist from '@/components/Checklist';
 import CopilotoIntro from '@/components/CopilotoIntro';
-import Trifecta from '@/components/Trifecta';
 import Agents from '@/components/Agents';
+import Trifecta from '@/components/Trifecta';
 import Mentor from '@/components/Mentor';
 import Faq from '@/components/Faq';
 import Pricing from '@/components/Pricing';
@@ -24,8 +26,10 @@ export default function SalesPage({ copy, area }) {
       <Hero copy={copy} />
       <ProofBar />
       <FifteenRule />
-      <Perfis />
+      <Niveis />
       <AreaBlock area={area} />
+      <ImpostoInvisivel />
+      <CrescerVsTrabalhar />
       <Metodo />
       <Checklist />
       <CopilotoIntro />

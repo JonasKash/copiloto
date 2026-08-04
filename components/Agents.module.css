@@ -15,7 +15,19 @@
   font-size: clamp(22px, 6vw, 32px); font-weight: 800; letter-spacing: -1px;
   line-height: 1.15; margin-bottom: 12px;
 }
-.p { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 20px; }
+.transform { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+.transform p {
+  font-size: 14px; line-height: 1.6; padding: 10px 14px 10px 16px; border-radius: var(--r-sm);
+  border-left: 3px solid var(--border);
+}
+.transform p span {
+  display: block; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.antes { background: var(--bg); color: var(--muted); border-left-color: var(--border); }
+.antes span { color: var(--muted); }
+.depois { background: #F5F0FA; color: var(--text); font-weight: 500; border-left-color: var(--purple-800); }
+.depois span { color: var(--purple-800); }
 
 .list { list-style: none; }
 .list li {

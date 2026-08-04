@@ -8,23 +8,23 @@ export const HOTMART_URL =
 // perto do fim, depois que o problema e o método já foram estabelecidos.
 const heroVariants = {
   default: {
-    h1: 'Seu escritório trabalha pra você. Ou você trabalha pra ele?',
+    h1: 'Seu escritório cresce. Ou só você trabalha mais?',
     sub:
-      'O maior gargalo não é falta de cliente. É que pesquisa, petição, contrato, prazo, risco e honorários ainda dependem só de você. Os 6 agentes assumem o repetitivo pra você virar estrategista, não operador.',
+      'A maioria dos escritórios confunde as duas coisas. Pesquisa, petição, contrato, prazo, risco e honorários ainda dependem só de você. Os 6 agentes existem pra isso parar de ser verdade.',
     ctaPrimary: 'Quero sair do Escritório Artesanal',
     ctaSecondary: 'Ver os 6 agentes',
   },
   atendimento: {
-    h1: 'Quanto custa um cliente perdido por demora na resposta?',
+    h1: 'Você não tem um problema de atendimento. Tem um problema de operação.',
     sub:
-      'Enquanto você pesquisa jurisprudência ou redige do zero, ele já está falando com outro escritório. Um Escritório Processual responde rápido porque automatizou o repetitivo, não porque contratou mais gente.',
+      'Enquanto você pesquisa jurisprudência ou redige do zero, o cliente espera e desiste. Isso não se resolve respondendo mais rápido no talento. Se resolve tirando o repetitivo do seu caminho.',
     ctaPrimary: 'Quero responder mais rápido',
     ctaSecondary: 'Ver os 6 agentes',
   },
   peticao: {
-    h1: 'Petição pronta em minutos. Não em horas.',
+    h1: 'Não é que você é lento pra escrever petição. É que ela sempre começa do zero.',
     sub:
-      'Nada de folha em branco. O Redator de Petições monta a peça com memória do processo, e mais 5 agentes cuidam de pesquisa, contrato, prazo, risco e honorários. Menos tempo na tarefa repetitiva, mais tempo na estratégia do caso.',
+      'O Redator de Petições monta a peça com memória do processo, e mais 5 agentes cuidam de pesquisa, contrato, prazo, risco e honorários. Isso é diferença de método, não de esforço.',
     ctaPrimary: 'Quero petições mais rápidas',
     ctaSecondary: 'Ver os 6 agentes',
   },
@@ -34,7 +34,7 @@ const baseCopy = {
   nav: {
     logo: 'Copiloto Jurídico',
     links: [
-      { href: '#perfis', label: 'Seu perfil' },
+      { href: '#perfis', label: 'Seu nível' },
       { href: '#metodo', label: 'O Método' },
       { href: '#agentes', label: 'Os 6 agentes' },
       { href: '#mentor', label: 'Quem criou' },
@@ -60,54 +60,55 @@ const baseCopy = {
       'Se uma tarefa jurídica se repete toda semana, ela não deveria tomar mais que 15 minutos do seu dia. Pesquisa, petição, contrato, prazo, risco, honorários: ou você monta um processo pra isso, ou continua refazendo o mesmo trabalho pra sempre.',
   },
 
-  perfis: {
-    eyebrow: 'Qual desses é o seu escritório?',
-    h: 'Você provavelmente já se reconheceu em um desses perfis.',
+  niveis: {
+    eyebrow: 'Em qual estágio seu escritório está?',
+    h: 'Isso não é uma lista de perfis. É um diagnóstico.',
     items: [
       {
-        num: 'Perfil 01',
-        name: 'O Escritório Dependente',
+        level: 'Nível 1',
+        name: 'Operação Dependente',
+        state: 'problem',
         tagline: 'Tudo passa por você.',
         headline: ['Seu escritório não funciona.', 'Você funciona por ele.'],
         text: [
           'Você responde clientes. Você revisa petições. Você tira dúvidas da equipe. Você acompanha prazos. Você decide praticamente tudo.',
           'Quando você para, o escritório desacelera junto.',
           'O problema nunca foi falta de competência. O problema é que seu escritório depende mais de você do que de um processo.',
-          'Esse é o primeiro sinal de um Escritório Artesanal.',
         ],
-        cta: 'Descubra como transformar dependência em processo.',
       },
       {
-        num: 'Perfil 02',
-        name: 'O Escritório Sobrecarregado',
+        level: 'Nível 2',
+        name: 'Operação Sobrecarregada',
+        state: 'problem',
         headline: ['O problema não é o volume.', 'É a repetição.'],
         text: [
           'Responder cliente. Pesquisar jurisprudência. Montar petição. Revisar contrato. Calcular honorários.',
           'Você faz as mesmas tarefas dezenas de vezes por semana. Não porque elas são difíceis. Mas porque nunca foram organizadas.',
           'Enquanto isso, o atendimento atrasa, os clientes esperam, e sua agenda continua cheia.',
         ],
-        cta: 'Existe um jeito diferente de operar.',
       },
       {
-        num: 'Perfil 03',
-        name: 'O Escritório Estagnado',
+        level: 'Nível 3',
+        name: 'Operação Estagnada',
+        state: 'problem',
         headline: ['Você não consegue crescer.', 'Porque cada novo cliente cria mais trabalho.'],
         text: [
           'Mais clientes deveriam significar mais faturamento. Mas hoje, cada novo processo significa mais mensagens, mais documentos, mais revisões, mais horas.',
           'Seu escritório cresce. Sua liberdade diminui.',
           'Isso acontece porque você aumentou o volume, mas nunca mudou a operação.',
         ],
-        cta: 'Conheça o Método Escritório Processual.',
       },
       {
-        num: 'Perfil 04',
-        name: 'O Escritório sem Organização',
-        headline: ['Você não perdeu tempo.', 'Você perdeu controle.'],
+        level: 'Nível 4',
+        name: 'Operação Processual',
+        state: 'goal',
+        tagline: 'O nível pra onde o Método leva.',
+        headline: ['Seu escritório começa a funcionar', 'sem depender só de você.'],
         text: [
-          'Arquivos espalhados. Prazos em vários lugares. WhatsApp misturado. Modelos diferentes. Equipe perguntando a mesma coisa.',
-          'Nada disso parece grave. Até o dia em que um prazo passa. Ou um cliente desiste. Ou você percebe que trabalha mais hoje do que há cinco anos.',
+          'Não é sobre trabalhar menos por sorte. É sobre ter processo pra cada coisa que hoje só existe na sua cabeça.',
+          'Cliente atendido, petição redigida, prazo acompanhado, contrato revisado: acontecendo mesmo quando você está numa audiência, num compromisso, ou de férias.',
         ],
-        cta: 'Descubra onde está o gargalo.',
+        cta: 'Descubra como chegar no Nível 4.',
       },
     ],
   },
@@ -143,16 +144,40 @@ const baseCopy = {
     },
   },
 
+  impostoInvisivel: {
+    eyebrow: 'O custo que ninguém calcula',
+    h: 'Todo advogado calcula honorários. Poucos calculam o custo da própria operação.',
+    intro: 'Toda vez que você:',
+    items: [
+      'pesquisa a mesma jurisprudência de novo',
+      'começa uma petição do zero',
+      'responde uma dúvida repetida',
+      'procura um documento perdido',
+      'interrompe uma tarefa pra responder o WhatsApp',
+    ],
+    outro: 'você está pagando um imposto invisível. O imposto do Escritório Artesanal.',
+    closing: 'Você não percebe porque paga em horas. Não em dinheiro.',
+  },
+
+  crescerVsTrabalhar: {
+    eyebrow: 'A confusão mais cara da advocacia',
+    h: 'Você não precisa de mais clientes.',
+    sub: 'Precisa que os próximos clientes não aumentem seu trabalho.',
+    text: 'Existe uma diferença enorme entre crescer e trabalhar mais. O Escritório Processual existe pra que um novo cliente aumente seu faturamento. Não sua carga de trabalho.',
+    left: { label: 'Crescer', text: 'Mais faturamento. Mesma operação.' },
+    right: { label: 'Trabalhar mais', text: 'Mais faturamento. Mais horas. Mais você no meio de tudo.' },
+  },
+
   metodo: {
     eyebrow: 'Existe um método',
-    h: 'O Método Escritório Processual.',
+    h: 'O Método Escritório Processual™.',
     p: 'Não é sobre usar mais tecnologia. É sobre parar de ser o gargalo do próprio escritório.',
     steps: [
-      { num: '01', h: 'Diagnosticar', p: 'Onde o seu tempo está sendo perdido de verdade.' },
-      { num: '02', h: 'Eliminar', p: 'As tarefas repetitivas que não deveriam mais passar pela sua mão.' },
-      { num: '03', h: 'Organizar', p: 'O fluxo do escritório, não só a vontade de ser organizado.' },
-      { num: '04', h: 'Automatizar', p: 'Os 6 agentes assumem pesquisa, petição, contrato, prazo, risco e honorários.' },
-      { num: '05', h: 'Escalar', p: 'Mais processo, mesmo tempo. Sem contratar antes da hora.' },
+      { num: '01', h: 'Mapear', p: 'Onde o seu escritório perde tempo de verdade.' },
+      { num: '02', h: 'Padronizar', p: 'Tudo que hoje depende só da sua memória.' },
+      { num: '03', h: 'Processualizar', p: 'Criar um fluxo único pra cada atividade que se repete.' },
+      { num: '04', h: 'Automatizar', p: 'Só depois entram os 6 agentes: pesquisa, petição, contrato, prazo, risco e honorários.' },
+      { num: '05', h: 'Escalar', p: 'Crescer sem aumentar o caos.' },
     ],
   },
 
@@ -203,7 +228,8 @@ const baseCopy = {
     {
       num: 'Agente 01',
       h: 'Pesquisador.',
-      p: 'Busca jurisprudência no STJ, STF e TRTs e entrega a fonte de cada citação. Sem inventar precedente, sem cortar caminho que compromete a peça.',
+      antes: 'Você abre três sites, compara decisões e confere se estão atualizadas.',
+      depois: 'Em poucos minutos você recebe jurisprudência organizada, rastreável e pronta pra usar.',
       list: [
         'Busca cruzada em STJ, STF e TRTs',
         'Fonte rastreável em cada citação',
@@ -214,7 +240,8 @@ const baseCopy = {
     {
       num: 'Agente 02',
       h: 'Redator de Petições.',
-      p: 'Escreve a peça com memória do processo. Cada novo documento aproveita o histórico do caso, em vez de começar do zero toda vez.',
+      antes: 'Cada petição começa praticamente do zero.',
+      depois: 'Cada nova peça reaproveita o conhecimento acumulado do processo.',
       list: [
         'Case Memory por processo',
         'Modelos por tipo de ação',
@@ -225,7 +252,8 @@ const baseCopy = {
     {
       num: 'Agente 03',
       h: 'Editor de Contratos.',
-      p: 'Analisa, revisa e compara minutas cláusula por cláusula. Aponta o que mudou entre uma versão e outra antes de você assinar.',
+      antes: 'Você revisa cláusula por cláusula sozinho, torcendo pra não passar nada batido.',
+      depois: 'Cada cláusula de risco já vem marcada e comparada com a versão anterior.',
       list: [
         'Comparação entre versões de minuta',
         'Marcação de cláusulas de risco',
@@ -236,7 +264,8 @@ const baseCopy = {
     {
       num: 'Agente 04',
       h: 'Gerenciador de Prazos.',
-      p: 'Cruza os prazos do processo com alertas automáticos. Você também pode criar lembretes manuais pra tudo que não está no sistema.',
+      antes: 'O prazo mora na sua memória, numa agenda ou num post-it que ninguém revisa.',
+      depois: 'Cada prazo tem alerta automático, antes do vencimento, não depois.',
       list: [
         'Alerta automático por processo',
         'Lembrete manual configurável',
@@ -247,7 +276,8 @@ const baseCopy = {
     {
       num: 'Agente 05',
       h: 'Analista de Riscos (Jurimetria).',
-      p: 'Cruza dados históricos pra estimar o comportamento de uma vara ou de um juiz específico antes de você decidir a estratégia.',
+      antes: 'Você decide litigar ou acordar no feeling, sem dado nenhum por trás.',
+      depois: 'Você decide com probabilidade de êxito, histórico da vara e custo-benefício calculado.',
       list: [
         'Prognóstico por vara e por juiz',
         'Histórico de decisões similares',
@@ -258,7 +288,8 @@ const baseCopy = {
     {
       num: 'Agente 06',
       h: 'Calculador de Honorários.',
-      p: 'Usa a tabela OAB cruzada com jurimetria pra sugerir um valor justo. Menos "no olho", mais número que você defende com segurança.',
+      antes: 'Você calcula honorários no chute, com medo de cobrar errado.',
+      depois: 'Você propõe um valor fundamentado na tabela OAB e na jurimetria, e defende com segurança.',
       list: [
         'Base na tabela OAB vigente',
         'Ajuste por complexidade do caso',
@@ -356,7 +387,7 @@ const baseCopy = {
       {
         title: 'Produto',
         links: [
-          { href: '#perfis', label: 'Seu perfil' },
+          { href: '#perfis', label: 'Seu nível' },
           { href: '#metodo', label: 'O Método' },
           { href: '#agentes', label: 'Os 6 agentes' },
           { href: '#mentor', label: 'Quem criou' },

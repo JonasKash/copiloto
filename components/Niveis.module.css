@@ -12,30 +12,42 @@
   .card:hover { box-shadow: var(--sh); transform: translateY(-2px); }
 }
 
-.num {
-  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--gold-deep); background: #FBF4DE; border: 1px solid #E9D599;
-  padding: 4px 12px; border-radius: 980px; margin-bottom: 14px;
+.goal {
+  background: var(--dark-grad); border-color: var(--purple-800);
 }
 
-.name { font-size: 15px; font-weight: 700; color: var(--muted); margin-bottom: 4px; }
+.dots { display: flex; gap: 5px; margin-bottom: 14px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+.dotOn { background: var(--purple-800); }
+.goal .dot { background: rgba(255,255,255,.15); }
+.goal .dotOn { background: var(--gold); }
+
+.level {
+  display: block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.goal .level { color: var(--gold-light); }
 
 .tagline { font-size: 13px; font-weight: 600; color: var(--purple-800); font-style: italic; margin-bottom: 10px; }
+.goal .tagline { color: var(--gold-light); }
 
 .headline {
   display: flex; flex-direction: column; font-size: clamp(20px, 4.5vw, 26px); font-weight: 800;
   letter-spacing: -.6px; line-height: 1.22; color: var(--text); margin-bottom: 16px;
 }
+.goal .headline { color: #fff; }
 
 .body p {
   font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 12px;
 }
 .body p:last-child { margin-bottom: 0; }
+.goal .body p { color: rgba(255,255,255,.65); }
 
 .cta {
   display: inline-flex; margin-top: 18px; font-size: 14px; font-weight: 700;
   color: var(--purple-800); text-decoration: none;
 }
+.goal .cta { color: var(--gold-light); }
 @media (hover: hover) {
   .cta:hover { opacity: .8; }
 }

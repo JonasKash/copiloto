@@ -9,7 +9,10 @@ export default function Agents() {
           <div>
             <p className={`${styles.num} reveal`}>{agent.num}</p>
             <h2 className={`${styles.h} reveal`}>{agent.h}</h2>
-            <p className={`${styles.p} reveal`}>{agent.p}</p>
+            <div className={`${styles.transform} reveal`}>
+              <p className={styles.antes}><span>Antes</span>{agent.antes}</p>
+              <p className={styles.depois}><span>Depois</span>{agent.depois}</p>
+            </div>
             <ul className={`${styles.list} reveal`}>
               {agent.list.map((item) => (
                 <li key={item}>{item}</li>

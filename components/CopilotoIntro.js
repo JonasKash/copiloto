@@ -8,8 +8,11 @@ export default function CopilotoIntro() {
       <div className={`${styles.inner} wrap reveal`}>
         <p className={styles.eyebrow}>{copilotoIntro.eyebrow}</p>
         <h2 className={styles.h}>{copilotoIntro.h}</h2>
-        <p className={styles.sub}>{copilotoIntro.sub}</p>
-        <p className={styles.text}>{copilotoIntro.text}</p>
+        {copilotoIntro.paragraphs.map((paragraph) => (
+          <p key={paragraph} className={styles.text}>
+            {paragraph}
+          </p>
+        ))}
       </div>
     </section>
   );

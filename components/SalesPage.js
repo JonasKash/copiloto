@@ -9,7 +9,8 @@ import CrescerVsTrabalhar from '@/components/CrescerVsTrabalhar';
 import Metodo from '@/components/Metodo';
 import Checklist from '@/components/Checklist';
 import CopilotoIntro from '@/components/CopilotoIntro';
-import Agents from '@/components/Agents';
+import Processos from '@/components/Processos';
+import CompraReal from '@/components/CompraReal';
 import Trifecta from '@/components/Trifecta';
 import Mentor from '@/components/Mentor';
 import Faq from '@/components/Faq';
@@ -33,7 +34,8 @@ export default function SalesPage({ copy, area }) {
       <Metodo />
       <Checklist />
       <CopilotoIntro />
-      <Agents />
+      <Processos />
+      <CompraReal />
       <Trifecta />
       <Mentor />
       <Faq />

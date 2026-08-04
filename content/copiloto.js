@@ -195,11 +195,14 @@ const baseCopy = {
   },
 
   copilotoIntro: {
-    eyebrow: 'A ferramenta',
-    h: 'O Copiloto Jurídico.',
-    sub: 'O sistema operacional do Escritório Processual.',
-    text:
-      'Os seis agentes não existem pra substituir o advogado. Eles existem pra que tarefas repetitivas deixem de depender exclusivamente dele.',
+    eyebrow: 'Do método pra prática',
+    h: 'Como o Método vira realidade.',
+    paragraphs: [
+      'Até aqui você entendeu o problema. Também conheceu o Método Escritório Processual™.',
+      'Mas existe uma pergunta importante: como colocar tudo isso em prática sem criar mais trabalho?',
+      'Foi exatamente por isso que criamos o Copiloto Jurídico. Ele não substitui o advogado. Ele operacionaliza o Método.',
+      'Cada agente representa um processo que deixa de depender exclusivamente da sua memória, do seu tempo e da sua presença.',
+    ],
   },
 
   trifecta: {
@@ -224,80 +227,76 @@ const baseCopy = {
     ],
   },
 
-  agents: [
+  processos: [
     {
-      num: 'Agente 01',
-      h: 'Pesquisador.',
-      antes: 'Você abre três sites, compara decisões e confere se estão atualizadas.',
-      depois: 'Em poucos minutos você recebe jurisprudência organizada, rastreável e pronta pra usar.',
-      list: [
-        'Busca cruzada em STJ, STF e TRTs',
-        'Fonte rastreável em cada citação',
-        'Filtro por vara, tribunal e período',
-        'Resultado pronto pra colar na petição',
-      ],
+      num: 'Processo 01',
+      h: 'Pesquisa Jurídica Inteligente',
+      problem: 'Nenhum advogado deveria pesquisar a mesma jurisprudência duas vezes.',
+      context:
+        'Toda vez que você abre três sites diferentes pra procurar decisões, você está repetindo um trabalho que já podia estar organizado.',
+      transform:
+        'No Escritório Processual, a pesquisa deixa de depender do tempo disponível do advogado. Ela passa a fazer parte do fluxo do escritório.',
+      agent: 'Pesquisador',
+      results: ['Jurisprudência organizada', 'Fonte rastreável em cada citação', 'Resultado pronto pra revisão'],
     },
     {
-      num: 'Agente 02',
-      h: 'Redator de Petições.',
-      antes: 'Cada petição começa praticamente do zero.',
-      depois: 'Cada nova peça reaproveita o conhecimento acumulado do processo.',
-      list: [
-        'Case Memory por processo',
-        'Modelos por tipo de ação',
-        'Ajuste de tom e argumento',
-        'Exportação pronta pra protocolar',
-      ],
+      num: 'Processo 02',
+      h: 'Produção de Peças',
+      problem:
+        'Toda petição criada do zero é sinal de que seu escritório ainda depende mais da memória do advogado do que de um processo.',
+      context: 'Cada caso novo devia aproveitar o que o escritório já sabe fazer, não recomeçar do nada.',
+      transform: 'No Escritório Processual, conhecimento não se perde. Ele é reaproveitado.',
+      agent: 'Redator de Petições',
+      results: ['Case Memory por processo', 'Modelos prontos por tipo de ação', 'Peça pronta pra revisão e protocolo'],
     },
     {
-      num: 'Agente 03',
-      h: 'Editor de Contratos.',
-      antes: 'Você revisa cláusula por cláusula sozinho, torcendo pra não passar nada batido.',
-      depois: 'Cada cláusula de risco já vem marcada e comparada com a versão anterior.',
-      list: [
-        'Comparação entre versões de minuta',
-        'Marcação de cláusulas de risco',
-        'Sugestão de ajuste de redação',
-        'Revisão em minutos, não em horas',
-      ],
+      num: 'Processo 03',
+      h: 'Revisão Contratual',
+      problem: 'Um contrato não deveria depender só da atenção de quem está revisando.',
+      context: 'Cláusula de risco escondida no meio do texto é o tipo de erro que passa despercebido numa revisão cansada.',
+      transform:
+        'No Escritório Processual, o risco é identificado antes da assinatura, não depois que o problema já aconteceu.',
+      agent: 'Editor de Contratos',
+      results: ['Comparação entre versões da minuta', 'Cláusulas de risco marcadas', 'Revisão em minutos, não em horas'],
     },
     {
-      num: 'Agente 04',
-      h: 'Gerenciador de Prazos.',
-      antes: 'O prazo mora na sua memória, numa agenda ou num post-it que ninguém revisa.',
-      depois: 'Cada prazo tem alerta automático, antes do vencimento, não depois.',
-      list: [
-        'Alerta automático por processo',
-        'Lembrete manual configurável',
-        'Visão única de todos os prazos',
-        'Aviso antes do vencimento, não depois',
-      ],
+      num: 'Processo 04',
+      h: 'Gestão de Prazos',
+      problem: 'O prazo não pode morar na memória do advogado.',
+      context: 'Precisa morar no processo, não num post-it ou numa agenda que só você olha.',
+      transform: 'No Escritório Processual, cada prazo tem um alerta automático, antes do vencimento, não depois.',
+      agent: 'Gerenciador de Prazos',
+      results: ['Alerta automático por processo', 'Lembrete manual configurável', 'Visão única de todos os prazos'],
     },
     {
-      num: 'Agente 05',
-      h: 'Analista de Riscos (Jurimetria).',
-      antes: 'Você decide litigar ou acordar no feeling, sem dado nenhum por trás.',
-      depois: 'Você decide com probabilidade de êxito, histórico da vara e custo-benefício calculado.',
-      list: [
-        'Prognóstico por vara e por juiz',
-        'Histórico de decisões similares',
-        'Leitura de tendência, não de aposta',
-        'Apoio pra decidir recorrer ou acordar',
-      ],
+      num: 'Processo 05',
+      h: 'Decisão Estratégica',
+      problem: 'Recorrer ou negociar? No Escritório Artesanal, essa decisão nasce só da experiência.',
+      context: 'E experiência sozinha erra. Principalmente sob pressão de prazo.',
+      transform: 'No Escritório Processual, essa decisão também considera dado: histórico da vara, probabilidade de êxito, custo-benefício.',
+      agent: 'Analista de Riscos',
+      results: ['Prognóstico por vara e por juiz', 'Histórico de decisões similares', 'Apoio pra decidir recorrer ou acordar'],
     },
     {
-      num: 'Agente 06',
-      h: 'Calculador de Honorários.',
-      antes: 'Você calcula honorários no chute, com medo de cobrar errado.',
-      depois: 'Você propõe um valor fundamentado na tabela OAB e na jurimetria, e defende com segurança.',
-      list: [
-        'Base na tabela OAB vigente',
-        'Ajuste por complexidade do caso',
-        'Cruzamento com dados de jurimetria',
-        'Proposta pronta pra enviar ao cliente',
-      ],
+      num: 'Processo 06',
+      h: 'Processo Comercial',
+      problem: 'Honorários não deveriam depender do "feeling".',
+      context: 'Devem seguir critério claro, que você consegue defender diante do cliente sem hesitar.',
+      transform: 'No Escritório Processual, o valor nasce da tabela OAB cruzada com jurimetria, não do chute.',
+      agent: 'Calculador de Honorários',
+      results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
     },
   ],
+
+  compraReal: {
+    eyebrow: 'Antes de você decidir',
+    h: 'O que você está comprando por R$27?',
+    text: [
+      'Você não está comprando seis agentes.',
+      'Você está dando o primeiro passo pra transformar um Escritório Artesanal em um Escritório Processual.',
+      'Os agentes são só a ferramenta. A verdadeira mudança acontece quando sua operação deixa de depender exclusivamente de você.',
+    ],
+  },
 
   mentor: {
     eyebrow: 'Quem está por trás',
@@ -344,20 +343,21 @@ const baseCopy = {
 
   pricing: {
     eyebrow: 'O primeiro passo',
-    h: 'Pagamento único. Os 6 agentes. Sem mensalidade.',
-    p: 'Você paga uma vez, pela Hotmart, e libera os 6 agentes na hora.',
+    h: 'Pagamento único. O Método implantado. Sem mensalidade.',
+    p: 'Você paga uma vez, pela Hotmart, e libera os 6 processos na hora.',
     plan: {
       badge: 'Acesso completo',
       name: 'Copiloto Jurídico',
       price: 'R$ 27',
       period: 'pagamento único',
       features: [
-        'Pesquisador de jurisprudência',
-        'Redator de Petições com Case Memory',
-        'Editor de Contratos',
-        'Gerenciador de Prazos',
-        'Analista de Riscos (Jurimetria)',
-        'Calculador de Honorários',
+        'Implantação do Processo 01 — Pesquisa Jurídica Inteligente',
+        'Implantação do Processo 02 — Produção de Peças',
+        'Implantação do Processo 03 — Revisão Contratual',
+        'Implantação do Processo 04 — Gestão de Prazos',
+        'Implantação do Processo 05 — Decisão Estratégica',
+        'Implantação do Processo 06 — Processo Comercial',
+        'Método Escritório Processual™ operacionalizado pelo Copiloto',
         'Suporte direto de uso',
       ],
       ctaLabel: 'Garantir meu acesso',
@@ -368,7 +368,7 @@ const baseCopy = {
   finalCta: {
     eyebrow: 'Pronto pra parar de ser o gargalo do seu escritório?',
     h: 'Do Escritório Artesanal pro Escritório Processual, hoje.',
-    p: 'Cada dia sem os 6 agentes é mais uma pesquisa manual, mais uma petição do zero, mais um prazo pra torcer que não passou.',
+    p: 'Cada dia sem os 6 processos implantados é mais uma pesquisa manual, mais uma petição do zero, mais um prazo pra torcer que não passou.',
     ctaPrimary: 'Quero meus 6 agentes por R$ 27',
     ctaSecondary: 'Ver os 6 agentes de novo',
   },

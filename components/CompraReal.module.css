@@ -1,0 +1,22 @@
+.section { padding: 56px 0; background: var(--bg); }
+
+.inner { max-width: 620px; margin: 0 auto; text-align: center; }
+
+.eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gold-deep); margin-bottom: 12px;
+}
+
+.h { font-size: clamp(24px, 6vw, 34px); font-weight: 800; letter-spacing: -.6px; margin-bottom: 20px; color: var(--text); }
+
+.text { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+
+.highlight {
+  font-size: 18px; font-weight: 700; color: var(--purple-800); line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 640px) {
+  .section { padding: 80px 0; }
+  .highlight { font-size: 20px; }
+}

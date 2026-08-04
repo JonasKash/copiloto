@@ -1,9 +1,9 @@
 import Quiz from '@/components/Quiz';
 
 export const metadata = {
-  title: 'Diagnóstico gratuito — Copiloto Jurídico',
+  title: 'Diagnóstico Escritório Inteligente — Copiloto Jurídico',
   description:
-    'Responda 3 perguntas rápidas e descubra onde seu escritório está perdendo tempo. Receba a recomendação certa pra sua rotina jurídica.',
+    'Descubra se seu escritório ainda é um Escritório Artesanal. Responda 3 perguntas rápidas e receba o primeiro passo pra virar um Escritório Inteligente.',
 };
 
 export default function DiagnosticoPage() {

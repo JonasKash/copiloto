@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import ProofBar from '@/components/ProofBar';
 import FifteenRule from '@/components/FifteenRule';
 import Enemy from '@/components/Enemy';
+import Metodo from '@/components/Metodo';
 import Trifecta from '@/components/Trifecta';
 import Agents from '@/components/Agents';
 import Mentor from '@/components/Mentor';
@@ -22,6 +23,7 @@ export default function SalesPage({ copy }) {
       <ProofBar />
       <FifteenRule />
       <Enemy copy={copy} />
+      <Metodo />
       <Trifecta />
       <Agents />
       <Mentor />

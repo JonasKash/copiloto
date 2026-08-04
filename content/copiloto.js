@@ -2,26 +2,27 @@ export const HOTMART_URL =
   'https://pay.hotmart.com/V105994251O?off=7xe30h5v&bid=1785716839200';
 
 // Hero e Enemy mudam de acordo com a dor que o advogado apontou no diagnóstico.
-// O resto da página (agentes, mentor, preço, FAQ) é o mesmo, porque o produto é o mesmo.
+// O resto da página (método, agentes, mentor, preço, FAQ) é o mesmo, porque a
+// transformação vendida (Escritório Artesanal -> Escritório Inteligente) é a mesma.
 const heroVariants = {
   default: {
-    h1: '80% do seu trabalho repetitivo, automatizado.',
+    h1: 'Seu escritório trabalha pra você. Ou você trabalha pra ele?',
     sub:
-      'Pesquisa, petição, contrato, prazo, risco e honorários. 6 agentes assumem o que é repetitivo. Sobra tempo pra você fazer o que só um advogado faz.',
+      'O maior gargalo não é falta de cliente. É que pesquisa, petição, contrato, prazo, risco e honorários ainda dependem só de você. Os 6 agentes assumem o repetitivo pra você virar estrategista, não operador.',
     ctaPrimary: 'Quero meus 6 agentes por R$ 27',
     ctaSecondary: 'Ver os 6 agentes',
   },
   atendimento: {
-    h1: 'Pare de perder cliente por demora na resposta.',
+    h1: 'Quanto custa um cliente perdido por demora na resposta?',
     sub:
-      'Cliente não espera. Enquanto você pesquisa jurisprudência ou redige do zero, ele já está falando com outro escritório. Os 6 agentes tiram o trabalho manual do caminho pra você responder rápido, sem perder precisão.',
+      'Enquanto você pesquisa jurisprudência ou redige do zero, ele já está falando com outro escritório. Escritório Inteligente responde rápido porque automatizou o repetitivo, não porque contratou mais gente.',
     ctaPrimary: 'Quero responder mais rápido por R$ 27',
     ctaSecondary: 'Ver os 6 agentes',
   },
   peticao: {
-    h1: 'Petição pronta em minutos, não em horas.',
+    h1: 'Petição pronta em minutos. Não em horas.',
     sub:
-      'Nada de folha em branco. O Redator de Petições monta a peça com memória do processo, e mais 5 agentes cuidam de pesquisa, contrato, prazo, risco e honorários.',
+      'Nada de folha em branco. O Redator de Petições monta a peça com memória do processo, e mais 5 agentes cuidam de pesquisa, contrato, prazo, risco e honorários. Menos tempo na tarefa repetitiva, mais tempo na estratégia do caso.',
     ctaPrimary: 'Quero petições mais rápidas por R$ 27',
     ctaSecondary: 'Ver os 6 agentes',
   },
@@ -29,19 +30,19 @@ const heroVariants = {
 
 const enemyVariants = {
   default: {
-    h: 'Advogado sozinho vira funcionário da própria banca.',
+    h: 'O maior gargalo não é falta de cliente. É que tudo ainda depende de você.',
     p:
       'Pesquisar jurisprudência toma a manhã. Redigir a petição toma a tarde. E o prazo do processo do mês passado quase passou direto, porque ninguém lembrou.',
-    quote: 'Você estudou pra advogar, não pra ser secretário do próprio escritório.',
+    quote: 'Você estudou pra advogar, não pra ser o único fio que sustenta o escritório.',
   },
   atendimento: {
-    h: 'Enquanto você redige, o cliente espera. E desiste.',
+    h: 'Escritório Artesanal responde quando dá. Escritório Inteligente responde rápido, sempre.',
     p:
       'Não é falta de vontade de responder rápido. É que a resposta boa exige pesquisa, contexto do caso, atenção. Isso consome o tempo que devia ir pro atendimento.',
     quote: 'Cliente rápido não é cliente mal atendido. É cliente que não fica esperando à toa.',
   },
   peticao: {
-    h: 'Cada petição começando do zero é tempo que não volta.',
+    h: 'Escritório Artesanal recomeça do zero. Escritório Inteligente reaproveita o que já construiu.',
     p:
       'Mesmo caso parecido com outro que você já fez mês passado, mas a peça nasce em branco de novo. Pesquisa, estrutura, fundamentação: tudo refeito, sempre.',
     quote: 'A petição não devia ser o gargalo. Devia ser a parte fácil.',
@@ -52,8 +53,8 @@ const baseCopy = {
   nav: {
     logo: 'Copiloto Jurídico',
     links: [
+      { href: '#metodo', label: 'O Método' },
       { href: '#agentes', label: 'Os 6 agentes' },
-      { href: '#como-funciona', label: 'Como funciona' },
       { href: '#mentor', label: 'Quem criou' },
       { href: '#preco', label: 'Acesso' },
       { href: '#faq', label: 'Dúvidas' },
@@ -81,7 +82,7 @@ const baseCopy = {
   enemy: {
     eyebrow: 'O problema',
     bad: {
-      label: 'Sem os 6 agentes',
+      label: 'Escritório Artesanal',
       items: [
         'Horas procurando jurisprudência em três sites diferentes',
         'Petição em branco, começando do zero toda vez',
@@ -92,7 +93,7 @@ const baseCopy = {
       ],
     },
     good: {
-      label: 'Com os 6 agentes',
+      label: 'Escritório Inteligente',
       items: [
         'Pesquisador traz jurisprudência do STJ, STF e TRTs com fonte rastreável',
         'Redator monta a petição com memória do processo, não do zero',
@@ -102,6 +103,19 @@ const baseCopy = {
         'Resposta pronta pra revisar no mesmo dia',
       ],
     },
+  },
+
+  metodo: {
+    eyebrow: 'Como funciona a transformação',
+    h: 'O Método E.I. — Escritório Inteligente.',
+    p: 'Não é sobre usar mais tecnologia. É sobre parar de ser o gargalo do próprio escritório.',
+    steps: [
+      { num: '01', h: 'Diagnosticar', p: 'Onde o seu tempo está sendo perdido de verdade.' },
+      { num: '02', h: 'Eliminar', p: 'As tarefas repetitivas que não deveriam mais passar pela sua mão.' },
+      { num: '03', h: 'Organizar', p: 'O fluxo do escritório, não só a vontade de ser organizado.' },
+      { num: '04', h: 'Automatizar', p: 'Os 6 agentes assumem pesquisa, petição, contrato, prazo, risco e honorários.' },
+      { num: '05', h: 'Escalar', p: 'Mais processo, mesmo tempo. Sem contratar antes da hora.' },
+    ],
   },
 
   trifecta: {
@@ -204,12 +218,12 @@ const baseCopy = {
     credentials: 'OAB/SP 398.640',
     instagram: '@wbonadiofilho',
     quote:
-      'Não criei uma IA pra substituir advogado. Criei pra devolver o tempo que a rotina repetitiva rouba de quem advoga de verdade.',
+      'Não criei uma IA pra substituir advogado. Criei o primeiro passo pra sair do Escritório Artesanal e virar um Escritório Inteligente.',
   },
 
   whoFor: {
     eyebrow: 'Pra quem é',
-    h: 'Feito pra quem advoga de verdade, não pra quem só quer testar IA.',
+    h: 'Feito pra quem quer sair do Escritório Artesanal, não pra quem só quer testar IA.',
     cards: [
       { icon: 'scale', h3: 'Advogado autônomo', p: 'Você é a banca inteira. Precisa de alavancagem, não de mais uma tarefa.' },
       { icon: 'building', h3: 'Pequeno escritório', p: 'Poucos sócios, muitos processos. Os agentes assumem o volume repetitivo.' },
@@ -280,9 +294,9 @@ const baseCopy = {
   },
 
   finalCta: {
-    eyebrow: 'Pronto pra recuperar seu tempo?',
-    h: 'Seus 6 agentes a mais hoje, por R$27.',
-    p: 'Cada dia sem eles é mais uma pesquisa manual, mais uma petição do zero, mais um prazo pra torcer que não passou.',
+    eyebrow: 'Pronto pra parar de ser o gargalo do seu escritório?',
+    h: 'Do Escritório Artesanal pro Escritório Inteligente, hoje.',
+    p: 'Cada dia sem os 6 agentes é mais uma pesquisa manual, mais uma petição do zero, mais um prazo pra torcer que não passou.',
     ctaPrimary: 'Quero meus 6 agentes por R$ 27',
     ctaSecondary: 'Ver os 6 agentes de novo',
   },
@@ -296,11 +310,12 @@ const baseCopy = {
 
   footer: {
     brand: 'Copiloto Jurídico',
-    tagline: 'IA aplicada à rotina jurídica, supervisionada por um advogado.',
+    tagline: 'O sistema operacional do Escritório Inteligente, supervisionado por um advogado.',
     columns: [
       {
         title: 'Produto',
         links: [
+          { href: '#metodo', label: 'O Método' },
           { href: '#agentes', label: 'Os 6 agentes' },
           { href: '#mentor', label: 'Quem criou' },
           { href: '#preco', label: 'Acesso' },

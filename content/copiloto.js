@@ -35,7 +35,6 @@ const baseCopy = {
     logo: 'Copiloto Jurídico',
     links: [
       { href: '#perfis', label: 'Seu nível' },
-      { href: '#metodo', label: 'O Método' },
       { href: '#agentes', label: 'Os 6 processos' },
       { href: '#mentor', label: 'Quem criou' },
       { href: '#faq', label: 'Dúvidas' },
@@ -385,7 +384,6 @@ const baseCopy = {
         title: 'Produto',
         links: [
           { href: '#perfis', label: 'Seu nível' },
-          { href: '#metodo', label: 'O Método' },
           { href: '#agentes', label: 'Os 6 processos' },
           { href: '#mentor', label: 'Quem criou' },
         ],

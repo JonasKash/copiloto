@@ -6,7 +6,6 @@ import Niveis from '@/components/Niveis';
 import AreaBlock from '@/components/AreaBlock';
 import ImpostoInvisivel from '@/components/ImpostoInvisivel';
 import CrescerVsTrabalhar from '@/components/CrescerVsTrabalhar';
-import Metodo from '@/components/Metodo';
 import Checklist from '@/components/Checklist';
 import CopilotoIntro from '@/components/CopilotoIntro';
 import Processos from '@/components/Processos';
@@ -31,15 +30,14 @@ export default function SalesPage({ copy, area }) {
       <AreaBlock area={area} />
       <ImpostoInvisivel />
       <CrescerVsTrabalhar />
-      <Metodo />
       <Checklist />
       <CopilotoIntro />
       <Processos />
       <CompraReal />
       <Trifecta />
       <Mentor />
-      <Faq />
       <Pricing />
+      <Faq />
       <FinalCta />
       <SecureStrip />
       <Footer />

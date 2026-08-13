@@ -54,22 +54,140 @@ const processosIntroVariants = {
   },
 };
 
-// Quais processos (pelo número) lideram a lista em cada variante.
-const processosOrderVariants = {
-  default: [],
-  atendimento: ['Processo 01', 'Processo 02'],
-  peticao: ['Processo 02', 'Processo 01'],
-};
+// Cada processo abaixo é sempre executado pelo mesmo agente (o produto não
+// muda). O que muda por variante é o *ângulo*: problem/context/transform
+// reescritos pra falar da dor específica que a pessoa apontou no
+// diagnóstico, não só a ordem. Isso bate direto na dor de quem está lendo,
+// em vez de mostrar a mesma lista genérica pra todo mundo.
 
-function reorderProcessos(processosBase, leadNums) {
-  if (!leadNums || leadNums.length === 0) return processosBase;
-  const lead = leadNums
-    .map((num) => processosBase.find((p) => p.num === num))
-    .filter(Boolean)
-    .map((p) => ({ ...p, highlight: true }));
-  const rest = processosBase.filter((p) => !leadNums.includes(p.num));
-  return [...lead, ...rest];
-}
+const processosAtendimento = [
+  {
+    num: 'Processo 01',
+    h: 'Pesquisa Jurídica Inteligente',
+    problem: 'Enquanto você pesquisa a resposta certa, o cliente já está esperando do outro lado da linha.',
+    context: 'Toda dúvida que exige pesquisa manual atrasa a resposta, e é nesse intervalo que o cliente sente que foi esquecido.',
+    transform: 'A pesquisa vira parte do fluxo de atendimento. A resposta chega rápido, com fonte confiável, sem o cliente esperar.',
+    agent: 'Pesquisador',
+    agentLine: 'O Copiloto assume esse processo com o Pesquisador.',
+    results: ['Jurisprudência organizada', 'Fonte rastreável em cada citação', 'Resposta pronta pra mandar ao cliente'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 02',
+    h: 'Produção de Peças',
+    problem: '"Quando sai minha petição?" — a pergunta que mais chega no seu WhatsApp.',
+    context: 'Enquanto a peça não sai, o cliente manda mensagem atrás de mensagem perguntando status, e cada uma delas também rouba seu tempo.',
+    transform: 'Com o histórico do caso reaproveitado, a peça sai mais rápido, e o cliente para de precisar perguntar.',
+    agent: 'Redator de Petições',
+    agentLine: 'Quem executa esse processo é o Redator de Petições.',
+    results: ['Case Memory por processo', 'Modelos prontos por tipo de ação', 'Peça pronta pra revisão e protocolo'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 03',
+    h: 'Revisão Contratual',
+    problem: 'Cliente acha que revisar contrato é rápido. Raramente é, e a espera vira reclamação.',
+    context: 'Cada rodada de revisão manual é mais um dia sem resposta, mais uma cobrança chegando.',
+    transform: 'Risco identificado em minutos significa resposta ao cliente em minutos, não em dias.',
+    agent: 'Editor de Contratos',
+    agentLine: 'O Editor de Contratos cuida desse processo pra você.',
+    results: ['Comparação entre versões da minuta', 'Cláusulas de risco marcadas', 'Revisão em minutos, não em horas'],
+  },
+  {
+    num: 'Processo 04',
+    h: 'Gestão de Prazos',
+    problem: 'Cliente pergunta sobre prazo, e às vezes você mesmo precisa conferir antes de responder.',
+    context: 'Isso atrasa a resposta e passa insegurança pro cliente, mesmo quando está tudo sob controle.',
+    transform: 'Com alerta automático, você responde na hora, porque já sabe o status sem precisar checar.',
+    agent: 'Gerenciador de Prazos',
+    agentLine: 'Esse processo roda com o Gerenciador de Prazos.',
+    results: ['Alerta automático por processo', 'Lembrete manual configurável', 'Visão única de todos os prazos'],
+  },
+  {
+    num: 'Processo 05',
+    h: 'Decisão Estratégica',
+    problem: '"Vale a pena recorrer?" — o cliente espera uma resposta segura, não um "deixa eu ver".',
+    context: 'Sem dado à mão, a resposta demora, ou sai baseada só no instinto, na hora, sob pressão.',
+    transform: 'Com histórico da vara e probabilidade de êxito prontos, você responde com segurança já na primeira conversa.',
+    agent: 'Analista de Riscos',
+    agentLine: 'Quem traz esses números é o Analista de Riscos.',
+    results: ['Prognóstico por vara e por juiz', 'Histórico de decisões similares', 'Resposta segura na hora da dúvida do cliente'],
+  },
+  {
+    num: 'Processo 06',
+    h: 'Processo Comercial',
+    problem: '"Quanto vai custar?" — hesitar nessa resposta já derruba a confiança do cliente.',
+    context: 'Calcular de cabeça, na pressa de responder rápido, é receita pra cobrar errado ou parecer inseguro.',
+    transform: 'Com critério pronto, a proposta de honorários sai junto com a resposta, sem hesitação.',
+    agent: 'Calculador de Honorários',
+    agentLine: 'O Calculador de Honorários fecha esse processo.',
+    results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
+  },
+];
+
+const processosPeticao = [
+  {
+    num: 'Processo 01',
+    h: 'Pesquisa Jurídica Inteligente',
+    problem: 'Toda petição nova te manda pesquisar jurisprudência de novo, mesmo em caso parecido com outro que você já fez.',
+    context: 'Isso é tempo que devia ir pra redação, não pra procurar de novo o que você já tinha achado antes.',
+    transform: 'A pesquisa fica pronta e organizada antes de você abrir o documento em branco.',
+    agent: 'Pesquisador',
+    agentLine: 'O Copiloto assume esse processo com o Pesquisador.',
+    results: ['Jurisprudência organizada', 'Fonte rastreável em cada citação', 'Base pronta antes de começar a escrever'],
+  },
+  {
+    num: 'Processo 02',
+    h: 'Produção de Peças',
+    problem: 'Toda petição criada do zero é sinal de que seu escritório ainda depende mais da memória do advogado do que de um processo.',
+    context: 'Cada caso novo devia aproveitar o que o escritório já sabe fazer, não recomeçar do nada.',
+    transform: 'Aqui, o conhecimento não se perde. Ele é reaproveitado a cada nova petição.',
+    agent: 'Redator de Petições',
+    agentLine: 'Quem executa esse processo é o Redator de Petições.',
+    results: ['Case Memory por processo', 'Modelos prontos por tipo de ação', 'Peça pronta pra revisão e protocolo'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 03',
+    h: 'Revisão Contratual',
+    problem: 'Enquanto você não termina uma petição, ainda tem contrato acumulando pra revisar.',
+    context: 'A pilha de documento parado cresce, e cada minuto revisando manualmente é um minuto a menos redigindo.',
+    transform: 'A revisão sai rápido, sobra tempo pra focar na petição que está atrasada.',
+    agent: 'Editor de Contratos',
+    agentLine: 'O Editor de Contratos cuida desse processo pra você.',
+    results: ['Comparação entre versões da minuta', 'Cláusulas de risco marcadas', 'Revisão em minutos, não em horas'],
+  },
+  {
+    num: 'Processo 04',
+    h: 'Gestão de Prazos',
+    problem: 'Enquanto você escreve uma petição, outro prazo de outro caso pode estar vencendo sem você perceber.',
+    context: 'Focar em redigir bem já toma toda a atenção. Não sobra espaço mental pra também vigiar prazo.',
+    transform: 'O prazo é monitorado sozinho, e você escreve sem o medo de esquecer outro caso.',
+    agent: 'Gerenciador de Prazos',
+    agentLine: 'Esse processo roda com o Gerenciador de Prazos.',
+    results: ['Alerta automático por processo', 'Lembrete manual configurável', 'Visão única de todos os prazos'],
+  },
+  {
+    num: 'Processo 05',
+    h: 'Decisão Estratégica',
+    problem: 'Antes de redigir, você precisa decidir a estratégia, e decidir sem dado deixa a petição mais fraca.',
+    context: 'Uma peça boa começa antes da redação, na escolha certa de argumento e pedido.',
+    transform: 'Com histórico de vara e probabilidade de êxito à mão, a petição já nasce com a estratégia certa.',
+    agent: 'Analista de Riscos',
+    agentLine: 'Quem traz esses números é o Analista de Riscos.',
+    results: ['Prognóstico por vara e por juiz', 'Histórico de decisões similares', 'Estratégia definida antes de escrever'],
+  },
+  {
+    num: 'Processo 06',
+    h: 'Processo Comercial',
+    problem: 'Depois de terminar a petição, ainda falta calcular o honorário, e isso também rouba tempo da próxima peça da fila.',
+    context: 'Calcular de cabeça, correndo, é o que sobra quando a prioridade real é escrever bem.',
+    transform: 'O cálculo sai pronto e defensável, sem tirar tempo da sua real prioridade: a próxima petição.',
+    agent: 'Calculador de Honorários',
+    agentLine: 'O Calculador de Honorários fecha esse processo.',
+    results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
+  },
+];
 
 const baseCopy = {
   nav: {
@@ -447,15 +565,21 @@ const baseCopy = {
   },
 };
 
+const processosVariants = {
+  default: null, // usa baseCopy.processos, sem reescrita — gargalo genérico
+  atendimento: processosAtendimento,
+  peticao: processosPeticao,
+};
+
 export function getCopy(variant = 'default') {
   const hero = heroVariants[variant] || heroVariants.default;
   const processosIntro = processosIntroVariants[variant] || processosIntroVariants.default;
-  const leadNums = processosOrderVariants[variant] || processosOrderVariants.default;
+  const processos = processosVariants[variant] || baseCopy.processos;
   return {
     ...baseCopy,
     hero: { ...baseCopy.hero, ...hero },
     processosIntro,
-    processos: reorderProcessos(baseCopy.processos, leadNums),
+    processos,
   };
 }
 

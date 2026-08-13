@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google';
+import Analytics from '@/components/Analytics';
 import './globals.css';
 
 const inter = Inter({
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
         <noscript>
           <style>{'.reveal{opacity:1!important;transform:none!important}'}</style>
         </noscript>
+        <Analytics />
         {children}
       </body>
     </html>

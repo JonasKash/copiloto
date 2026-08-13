@@ -3,6 +3,8 @@ create table if not exists public.diagnostics (
   gargalo text not null,
   tempo text not null,
   area text not null,
+  nome text,
+  whatsapp text,
   user_agent text,
   meta jsonb not null default '{}'::jsonb,
   created_at timestamptz not null default now()
@@ -18,6 +20,28 @@ begin
       and column_name  = 'meta'
   ) then
     alter table public.diagnostics add column meta jsonb not null default '{}'::jsonb;
+  end if;
+end $$;
+
+-- Migração 2026-08-12: adiciona nome/whatsapp (captura de contato pra
+-- follow-up de quem completa o diagnóstico e não compra o Copiloto)
+do $$
+begin
+  if not exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public'
+      and table_name   = 'diagnostics'
+      and column_name  = 'nome'
+  ) then
+    alter table public.diagnostics add column nome text;
+  end if;
+  if not exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public'
+      and table_name   = 'diagnostics'
+      and column_name  = 'whatsapp'
+  ) then
+    alter table public.diagnostics add column whatsapp text;
   end if;
 end $$;
 

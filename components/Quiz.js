@@ -3,31 +3,66 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { questions, routeForAnswers } from '@/content/quiz';
+import { pushEvent } from '@/lib/analytics';
 import styles from './Quiz.module.css';
+
+const TOTAL_STEPS = questions.length + 1;
+
+function sanitizePhone(value) {
+  return value.replace(/\D/g, '');
+}
 
 export default function Quiz() {
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
+  const [showContact, setShowContact] = useState(false);
+  const [contact, setContact] = useState({ nome: '', whatsapp: '' });
+  const [contactError, setContactError] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
   const question = questions[step];
-  const progress = ((step + 1) / questions.length) * 100;
-  const isLast = step === questions.length - 1;
-  const selected = answers[question.id];
+  const currentStepNumber = showContact ? TOTAL_STEPS : step + 1;
+  const progress = (currentStepNumber / TOTAL_STEPS) * 100;
+  const isLastQuestion = step === questions.length - 1;
+  const selected = question ? answers[question.id] : null;
 
   function selectOption(option) {
     setAnswers((prev) => ({ ...prev, [question.id]: option }));
   }
 
-  async function handleNext() {
+  function handleNext() {
     if (!selected) return;
 
-    if (!isLast) {
+    if (!isLastQuestion) {
       setStep((s) => s + 1);
       return;
     }
 
+    setShowContact(true);
+  }
+
+  function handleBack() {
+    if (showContact) {
+      setShowContact(false);
+      return;
+    }
+    if (step > 0) setStep((s) => s - 1);
+  }
+
+  async function handleSubmit() {
+    const nome = contact.nome.trim();
+    const whatsapp = sanitizePhone(contact.whatsapp);
+
+    if (nome.length < 2) {
+      setContactError('Digita seu nome.');
+      return;
+    }
+    if (whatsapp.length < 10 || whatsapp.length > 11) {
+      setContactError('Digita um WhatsApp válido, com DDD.');
+      return;
+    }
+    setContactError('');
     setSubmitting(true);
 
     const meta = {};
@@ -40,16 +75,14 @@ export default function Quiz() {
     fetch('/api/diagnostics', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...answers, meta }),
+      body: JSON.stringify({ ...answers, nome, whatsapp, meta }),
     }).catch(() => {});
+
+    pushEvent('diagnostico_completo', { area: answers.area, tempo: answers.tempo, ...meta });
 
     const destination = routeForAnswers(answers);
     const params = new URLSearchParams({ area: answers.area, tempo: answers.tempo });
     setTimeout(() => router.push(`${destination}?${params.toString()}`), 500);
-  }
-
-  function handleBack() {
-    if (step > 0) setStep((s) => s - 1);
   }
 
   return (
@@ -85,7 +118,7 @@ export default function Quiz() {
               <>
                 <div className={styles.progressMeta}>
                   <span>
-                    ETAPA {step + 1} DE {questions.length}
+                    ETAPA {currentStepNumber} DE {TOTAL_STEPS}
                   </span>
                   <strong>{Math.round(progress)}%</strong>
                 </div>
@@ -93,39 +126,81 @@ export default function Quiz() {
                   <div className={styles.progressFill} style={{ width: `${progress}%` }} />
                 </div>
 
-                <p className={styles.questionEyebrow}>{question.eyebrow}</p>
-                <h2 className={styles.question}>{question.title}</h2>
+                {showContact ? (
+                  <>
+                    <p className={styles.questionEyebrow}>Quase lá</p>
+                    <h2 className={styles.question}>Pra onde mandamos seu diagnóstico?</h2>
 
-                <div className={styles.options}>
-                  {question.options.map((option, index) => (
-                    <button
-                      key={option}
-                      type="button"
-                      className={`${styles.option} ${selected === option ? styles.optionSelected : ''}`}
-                      onClick={() => selectOption(option)}
-                    >
-                      <span className={styles.optionIndex}>{String.fromCharCode(65 + index)}</span>
-                      <span className={styles.optionLabel}>{option}</span>
-                      {selected === option && (
-                        <svg width="14" height="12" viewBox="0 0 10 8" fill="none">
-                          <path d="M1 4L3.5 6.5L9 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      )}
-                    </button>
-                  ))}
-                </div>
+                    <div className={styles.fieldGroup}>
+                      <label className={styles.fieldLabel} htmlFor="quiz-nome">Nome</label>
+                      <input
+                        id="quiz-nome"
+                        type="text"
+                        className={styles.fieldInput}
+                        value={contact.nome}
+                        onChange={(e) => setContact((prev) => ({ ...prev, nome: e.target.value }))}
+                        placeholder="Seu nome"
+                      />
+                    </div>
+
+                    <div className={styles.fieldGroup}>
+                      <label className={styles.fieldLabel} htmlFor="quiz-whatsapp">WhatsApp</label>
+                      <input
+                        id="quiz-whatsapp"
+                        type="tel"
+                        inputMode="numeric"
+                        className={styles.fieldInput}
+                        value={contact.whatsapp}
+                        onChange={(e) => setContact((prev) => ({ ...prev, whatsapp: e.target.value }))}
+                        placeholder="(11) 91234-5678"
+                      />
+                      <p className={styles.fieldHint}>Só usamos pra te enviar o resultado e tirar dúvida, sem spam.</p>
+                      {contactError && <p className={styles.fieldError}>{contactError}</p>}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <p className={styles.questionEyebrow}>{question.eyebrow}</p>
+                    <h2 className={styles.question}>{question.title}</h2>
+
+                    <div className={styles.options}>
+                      {question.options.map((option, index) => (
+                        <button
+                          key={option}
+                          type="button"
+                          className={`${styles.option} ${selected === option ? styles.optionSelected : ''}`}
+                          onClick={() => selectOption(option)}
+                        >
+                          <span className={styles.optionIndex}>{String.fromCharCode(65 + index)}</span>
+                          <span className={styles.optionLabel}>{option}</span>
+                          {selected === option && (
+                            <svg width="14" height="12" viewBox="0 0 10 8" fill="none">
+                              <path d="M1 4L3.5 6.5L9 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
 
                 <div className={styles.actions}>
-                  {step > 0 ? (
+                  {step > 0 || showContact ? (
                     <button type="button" className={styles.backBtn} onClick={handleBack}>
                       Voltar
                     </button>
                   ) : (
                     <span />
                   )}
-                  <button type="button" className={styles.nextBtn} disabled={!selected} onClick={handleNext}>
-                    {isLast ? 'Ver meu diagnóstico' : 'Continuar'} →
-                  </button>
+                  {showContact ? (
+                    <button type="button" className={styles.nextBtn} onClick={handleSubmit}>
+                      Ver meu diagnóstico →
+                    </button>
+                  ) : (
+                    <button type="button" className={styles.nextBtn} disabled={!selected} onClick={handleNext}>
+                      Continuar →
+                    </button>
+                  )}
                 </div>
               </>
             )}

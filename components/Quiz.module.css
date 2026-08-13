@@ -104,6 +104,19 @@
 .footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 32px; }
 .footer span { margin-left: 6px; }
 
+.fieldGroup { margin-bottom: 18px; }
+.fieldLabel {
+  display: block; font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 8px;
+}
+.fieldInput {
+  width: 100%; min-height: 48px; font-size: max(1rem, 16px); font-family: inherit;
+  color: var(--text); background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: var(--r); padding: 0 16px; transition: border-color .15s;
+}
+.fieldInput:focus { outline: none; border-color: var(--purple-600); }
+.fieldError { font-size: 12px; color: #B42318; margin-top: 6px; }
+.fieldHint { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
 @media (min-width: 960px) {
   .page { padding: 48px 24px; }
   .grid { grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }

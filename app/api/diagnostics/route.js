@@ -7,6 +7,18 @@ const ALLOWED = {
   area: ['Trabalhista', 'Previdenciário', 'Família', 'Empresarial', 'Consumidor', 'Outra'],
 };
 
+function sanitizeNome(value) {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim().slice(0, 120);
+  return trimmed.length >= 2 ? trimmed : null;
+}
+
+function sanitizeWhatsapp(value) {
+  if (typeof value !== 'string') return null;
+  const digits = value.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 11 ? digits : null;
+}
+
 function sanitizeMeta(meta) {
   if (typeof meta !== 'object' || meta === null || Array.isArray(meta)) return {};
   const out = {};
@@ -30,10 +42,16 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Formato inválido' }, { status: 400 });
   }
 
-  const { meta, ...answers } = body;
+  const { meta, nome, whatsapp, ...answers } = body;
   const valid = Object.entries(ALLOWED).every(([key, values]) => values.includes(answers[key]));
   if (!valid) {
     return NextResponse.json({ error: 'Respostas inválidas' }, { status: 400 });
+  }
+
+  const nomeLimpo = sanitizeNome(nome);
+  const whatsappLimpo = sanitizeWhatsapp(whatsapp);
+  if (!nomeLimpo || !whatsappLimpo) {
+    return NextResponse.json({ error: 'Nome ou WhatsApp inválido' }, { status: 422 });
   }
 
   try {
@@ -43,6 +61,8 @@ export async function POST(request) {
         gargalo: answers.gargalo,
         tempo: answers.tempo,
         area: answers.area,
+        nome: nomeLimpo,
+        whatsapp: whatsappLimpo,
         meta: sanitizeMeta(meta),
         user_agent: request.headers.get('user-agent')?.slice(0, 250) || null,
       }),

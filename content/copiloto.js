@@ -30,6 +30,47 @@ const heroVariants = {
   },
 };
 
+// Seção "Os 6 processos" também muda de acordo com o gargalo apontado no
+// diagnóstico: o(s) processo(s) mais ligado(s) àquela dor específica
+// lidera(m) a lista e ganha(m) destaque visual. O produto continua sendo
+// o mesmo (os 6 processos existem pra todo mundo) — o que muda é qual
+// deles a página mostra primeiro e como a introdução da seção fala com
+// quem acabou de dizer qual é o seu maior gargalo.
+const processosIntroVariants = {
+  default: {
+    eyebrow: 'Os processos, não as ferramentas',
+    h: 'Seis processos que deixam de depender só de você.',
+    p: 'Cada ferramenta abaixo é só o mecanismo. O que muda o escritório é o processo por trás dela.',
+  },
+  atendimento: {
+    eyebrow: 'O que resolve seu atendimento',
+    h: 'Seis processos. Os dois primeiros tiram o cliente da fila de espera.',
+    p: 'Pesquisa e petição são o que mais atrasa uma resposta ao cliente. Veja como esses dois processos entram primeiro, e o resto do Método que sustenta tudo isso.',
+  },
+  peticao: {
+    eyebrow: 'O que tira a petição do zero',
+    h: 'Seis processos. O primeiro é o que muda sua rotina de redação.',
+    p: 'Produção de Peças lidera porque é aí que você mais sente o problema hoje. Os outros cinco processos sustentam o resto do Escritório Processual.',
+  },
+};
+
+// Quais processos (pelo número) lideram a lista em cada variante.
+const processosOrderVariants = {
+  default: [],
+  atendimento: ['Processo 01', 'Processo 02'],
+  peticao: ['Processo 02', 'Processo 01'],
+};
+
+function reorderProcessos(processosBase, leadNums) {
+  if (!leadNums || leadNums.length === 0) return processosBase;
+  const lead = leadNums
+    .map((num) => processosBase.find((p) => p.num === num))
+    .filter(Boolean)
+    .map((p) => ({ ...p, highlight: true }));
+  const rest = processosBase.filter((p) => !leadNums.includes(p.num));
+  return [...lead, ...rest];
+}
+
 const baseCopy = {
   nav: {
     logo: 'Copiloto Jurídico',
@@ -408,9 +449,13 @@ const baseCopy = {
 
 export function getCopy(variant = 'default') {
   const hero = heroVariants[variant] || heroVariants.default;
+  const processosIntro = processosIntroVariants[variant] || processosIntroVariants.default;
+  const leadNums = processosOrderVariants[variant] || processosOrderVariants.default;
   return {
     ...baseCopy,
     hero: { ...baseCopy.hero, ...hero },
+    processosIntro,
+    processos: reorderProcessos(baseCopy.processos, leadNums),
   };
 }
 

@@ -30,7 +30,7 @@ export default function SalesPage({ copy, area }) {
       <CrescerVsTrabalhar />
       <Checklist />
       <CopilotoIntro />
-      <Processos />
+      <Processos copy={copy} />
       <CompraReal />
       <Trifecta />
       <Mentor />

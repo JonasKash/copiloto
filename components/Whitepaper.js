@@ -216,9 +216,10 @@ export default function Whitepaper() {
           processos que já foram definidos por gente que entende do próprio negócio.
         </p>
         <p>
-          É essa a lógica por trás do Copiloto Jurídico: seis processos automatizados (pesquisa de
+          É essa a lógica por trás do Copiloto Jurídico: nove processos automatizados (pesquisa de
           jurisprudência, redação de petições, revisão de contratos, gestão de prazos, análise de risco por
-          jurimetria e cálculo de honorários), cada um operacionalizando uma etapa que, sem processo
+          jurimetria, cálculo de honorários, auditoria de conteúdo já produzido, condensação de informação
+          longa e criação de agentes sob medida), cada um operacionalizando uma etapa que, sem processo
           definido antes, um advogado tentaria automatizar sozinho e provavelmente pioraria.
         </p>
         <p>A IA não substitui o julgamento do advogado responsável por cada caso. Acelera a parte do trabalho que já era repetitiva antes da IA existir.</p>
@@ -249,8 +250,8 @@ export default function Whitepaper() {
           qualidade da ferramenta em si.
         </p>
 
-        <h2>7. Antes e depois: seis processos, uma mudança estrutural</h2>
-        <p>Aplicado a um escritório jurídico, o Método muda de forma concreta seis áreas de trabalho que, sem processo, consomem tempo desproporcional:</p>
+        <h2>7. Antes e depois: nove processos, uma mudança estrutural</h2>
+        <p>Aplicado a um escritório jurídico, o Método muda de forma concreta nove áreas de trabalho que, sem processo, consomem tempo desproporcional:</p>
         <div className={styles.tableWrap}>
           <table className={styles.table}>
             <thead>
@@ -263,11 +264,14 @@ export default function Whitepaper() {
               <tr><td>Gestão de prazos</td><td>Depende da memória ou de agenda pessoal de quem fundou o escritório.</td><td>Mora no processo, com alerta automático antes do vencimento.</td></tr>
               <tr><td>Decisão de recorrer ou negociar</td><td>Baseada só na experiência pessoal do advogado responsável.</td><td>Considera dado real: histórico da vara, probabilidade de êxito, custo-benefício.</td></tr>
               <tr><td>Cálculo de honorários</td><td>No chute, com medo recorrente de cobrar errado.</td><td>Critério claro, documentado, defensável diante do cliente.</td></tr>
+              <tr><td>Auditoria de conteúdo já produzido</td><td>Ninguém sabe ao certo o que o escritório já tem salvo, nem onde está.</td><td>Mapeado e localizável, com lacuna identificada antes de recriar o que já existe.</td></tr>
+              <tr><td>Condensação de informação longa</td><td>Documento extenso, histórico de anos, decisão de dezenas de páginas: relidos do zero toda vez.</td><td>Resumido no que realmente importa, sem reler tudo de novo.</td></tr>
+              <tr><td>Criação de agentes sob medida</td><td>Rotina específica do escritório força adaptação a ferramenta genérica, ou exige programar.</td><td>Processo configurado sob medida pra rotina real, sem programação.</td></tr>
             </tbody>
           </table>
         </div>
         <p>
-          Nenhuma dessas seis mudanças depende, em si, de inteligência artificial. Dependem de processo. A
+          Nenhuma dessas nove mudanças depende, em si, de inteligência artificial. Dependem de processo. A
           IA entra depois, executando o que o processo já definiu, e é isso que separa uma ferramenta que
           gera resultado de uma ferramenta que só gera mais uma assinatura mensal esquecida.
         </p>

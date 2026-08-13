@@ -203,7 +203,7 @@ export default function Manifesto() {
           O <strong>Diagnóstico</strong> mostra em qual dos quatro estágios o escritório está
           agora. Este <strong>Manifesto</strong> explica o porquê por trás de tudo. O{' '}
           <strong>Método</strong> dá a sequência exata de como sair de um estágio pro outro. O{' '}
-          <strong>Copiloto Jurídico</strong> operacionaliza o método no dia a dia, com seis
+          <strong>Copiloto Jurídico</strong> operacionaliza o método no dia a dia, com nove
           processos automatizados. A <strong>Consultoria</strong> implanta esse método na prática,
           dentro da rotina real de cada escritório, com acompanhamento humano. E a comunidade de
           quem já está atravessando essa ponte funciona como prova de que o caminho é percorrível,
@@ -266,7 +266,7 @@ export default function Manifesto() {
         </p>
         <p>
           Por isso o Copiloto Jurídico, a ferramenta que nasceu desse método, não é vendido como
-          &ldquo;seis agentes de inteligência artificial&rdquo;. Ele é o sistema operacional do
+          &ldquo;nove agentes de inteligência artificial&rdquo;. Ele é o sistema operacional do
           Escritório Processual: a peça que executa, na prática, os processos que você já
           organizou. Sem o método antes, ele é só mais um software. Com o método antes, ele vira
           uma máquina operacional de verdade.
@@ -286,11 +286,17 @@ export default function Manifesto() {
           aconteceu. O prazo deixa de morar na memória de uma pessoa e passa a morar no processo,
           com alerta automático antes do vencimento. A decisão de recorrer ou negociar deixa de
           nascer só da experiência e passa a considerar dado real: histórico da vara, probabilidade
-          de êxito, custo-benefício. E o honorário deixa de ser calculado no chute, com medo de
-          cobrar errado, e passa a nascer de critério claro, defensável diante do cliente.
+          de êxito, custo-benefício. O honorário deixa de ser calculado no chute, com medo de
+          cobrar errado, e passa a nascer de critério claro, defensável diante do cliente. O
+          conteúdo que o escritório já produziu deixa de ficar perdido em pasta ou aba de
+          navegador e passa a ter um mapa de onde está e o que falta. A informação longa demais
+          pra reler toda vez deixa de ser reaberta do zero e passa a chegar resumida, com o que
+          realmente importa. E a rotina específica de cada escritório, que nenhuma ferramenta
+          pronta cobre direito, deixa de exigir adaptação forçada e passa a virar processo sob
+          medida, sem programar nada.
         </p>
         <p>
-          Seis mudanças. Nenhuma delas é sobre ter mais tecnologia. Todas são sobre ter processo
+          Nove mudanças. Nenhuma delas é sobre ter mais tecnologia. Todas são sobre ter processo
           onde antes só havia esforço pessoal repetido.
         </p>
 
@@ -362,9 +368,10 @@ export default function Manifesto() {
           prática.
         </p>
         <p>
-          Cada um dos seis processos que hoje viram o Copiloto Jurídico resolve um gargalo que
+          Cada um dos nove processos que hoje viram o Copiloto Jurídico resolve um gargalo que
           existiu de verdade numa rotina de advocacia: a pesquisa que se repetia, a petição que
-          recomeçava do zero, o prazo que dependia só da memória, o honorário calculado no chute.
+          recomeçava do zero, o prazo que dependia só da memória, o honorário calculado no chute,
+          o conteúdo salvo que ninguém achava mais.
           Antes de virar método pra outros advogados, cada um desses pontos foi, primeiro, uma
           noite de terça-feira como a que abriu este texto.
         </p>

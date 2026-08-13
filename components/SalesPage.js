@@ -2,7 +2,6 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import ProofBar from '@/components/ProofBar';
 import FifteenRule from '@/components/FifteenRule';
-import Niveis from '@/components/Niveis';
 import AreaBlock from '@/components/AreaBlock';
 import ImpostoInvisivel from '@/components/ImpostoInvisivel';
 import CrescerVsTrabalhar from '@/components/CrescerVsTrabalhar';
@@ -26,7 +25,6 @@ export default function SalesPage({ copy, area }) {
       <Hero copy={copy} />
       <ProofBar />
       <FifteenRule />
-      <Niveis />
       <AreaBlock area={area} />
       <ImpostoInvisivel />
       <CrescerVsTrabalhar />

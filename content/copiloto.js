@@ -34,7 +34,6 @@ const baseCopy = {
   nav: {
     logo: 'Copiloto Jurídico',
     links: [
-      { href: '#perfis', label: 'Seu nível' },
       { href: '#agentes', label: 'Os 6 processos' },
       { href: '#mentor', label: 'Quem criou' },
       { href: '#faq', label: 'Dúvidas' },
@@ -148,7 +147,7 @@ const baseCopy = {
       'interrompe uma tarefa pra responder o WhatsApp',
     ],
     outro: 'você está pagando um imposto invisível. O imposto do Escritório Artesanal.',
-    closing: 'Você não percebe porque paga em horas. Não em dinheiro.',
+    closing: ['Você não percebe porque paga em horas', 'Não em dinheiro.'],
   },
 
   crescerVsTrabalhar: {
@@ -383,7 +382,6 @@ const baseCopy = {
       {
         title: 'Produto',
         links: [
-          { href: '#perfis', label: 'Seu nível' },
           { href: '#agentes', label: 'Os 6 processos' },
           { href: '#mentor', label: 'Quem criou' },
         ],

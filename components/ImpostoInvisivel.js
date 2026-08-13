@@ -15,7 +15,9 @@ export default function ImpostoInvisivel() {
           ))}
         </ul>
         <p className={styles.outro}>...{c.outro}</p>
-        <p className={styles.closing}>{c.closing}</p>
+        {c.closing.map((line) => (
+          <p key={line} className={styles.closing}>{line}</p>
+        ))}
       </div>
     </section>
   );

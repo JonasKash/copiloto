@@ -30,7 +30,11 @@ export const ROUTE_BY_GARGALO = {
   'Atendimento ao cliente': '/atendimento',
   'Produção de peças': '/peticao',
   'Organização de documentos': '/documentos',
-  'Uso de IA': '/ia',
+  // 'Uso de IA' temporariamente cai no genérico — a página /ia tinha copy
+  // que não batia com a dor real (auditoria de conteúdo, condensação,
+  // criação de agentes). Voltar pra '/ia' assim que o Processo 07-09
+  // estiver especificado e a página reescrita.
+  'Uso de IA': '/6-agentes',
   'Captação de clientes': '/captacao',
 };
 

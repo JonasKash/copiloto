@@ -28,6 +28,27 @@ const heroVariants = {
     ctaPrimary: 'Quero petições mais rápidas',
     ctaSecondary: 'Ver os 6 processos',
   },
+  documentos: {
+    h1: 'Você sabe que aquele documento existe. Só não lembra onde guardou.',
+    sub:
+      'Cada minuto procurando arquivo perdido é um minuto que não volta. O Método Escritório Processual organiza isso antes de qualquer outra coisa.',
+    ctaPrimary: 'Quero parar de perder documento',
+    ctaSecondary: 'Ver os 6 processos',
+  },
+  ia: {
+    h1: 'Você já tentou usar IA no escritório. Não deu no que devia.',
+    sub:
+      'O problema nunca foi a ferramenta. Foi tentar automatizar antes de ter processo. O Método resolve isso na ordem certa, o Copiloto entra só depois.',
+    ctaPrimary: 'Quero IA que funciona de verdade',
+    ctaSecondary: 'Ver os 6 processos',
+  },
+  captacao: {
+    h1: 'Captar mais cliente sem organizar antes só aumenta a fila de espera.',
+    sub:
+      'Mais cliente num escritório sem processo não é crescimento. O Método organiza a operação antes de você acelerar a captação.',
+    ctaPrimary: 'Quero crescer sem virar caos',
+    ctaSecondary: 'Ver os 6 processos',
+  },
 };
 
 // Seção "Os 6 processos" também muda de acordo com o gargalo apontado no
@@ -51,6 +72,21 @@ const processosIntroVariants = {
     eyebrow: 'O que tira a petição do zero',
     h: 'Seis processos. O primeiro é o que muda sua rotina de redação.',
     p: 'Produção de Peças lidera porque é aí que você mais sente o problema hoje. Os outros cinco processos sustentam o resto do Escritório Processual.',
+  },
+  documentos: {
+    eyebrow: 'O que organiza seu escritório',
+    h: 'Seis processos. Todos guardam e recuperam informação sozinhos.',
+    p: 'Documento perdido é sintoma de processo que não existe. Veja como cada um desses 6 processos resolve isso, cada um à sua maneira.',
+  },
+  ia: {
+    eyebrow: 'IA que executa processo, não promessa vazia',
+    h: 'Seis processos. Cada um com IA aplicada depois que o processo já existe.',
+    p: 'IA sem processo por trás só faz o caos andar mais rápido. Veja como cada um desses 6 processos usa IA do jeito certo, na etapa certa.',
+  },
+  captacao: {
+    eyebrow: 'O que sustenta o crescimento',
+    h: 'Seis processos. A base que aguenta captar mais sem quebrar a operação.',
+    p: 'Antes de gastar mais com anúncio, veja o que precisa estar pronto pra aguentar o cliente que está por vir.',
   },
 };
 
@@ -565,10 +601,208 @@ const baseCopy = {
   },
 };
 
+const processosDocumentos = [
+  {
+    num: 'Processo 01',
+    h: 'Pesquisa Jurídica Inteligente',
+    problem: 'Jurisprudência que você já pesquisou um dia está perdida em algum print, algum favorito de navegador, algum e-mail antigo.',
+    context: 'Sem lugar organizado pra guardar, cada pesquisa nova vira decisão de recomeçar do zero, mesmo quando você sabe que já tinha achado antes.',
+    transform: 'Cada resultado de pesquisa fica registrado e localizável, não perdido em aba de navegador.',
+    agent: 'Pesquisador',
+    agentLine: 'O Copiloto assume esse processo com o Pesquisador.',
+    results: ['Jurisprudência organizada', 'Fonte rastreável em cada citação', 'Resultado fácil de achar depois'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 02',
+    h: 'Produção de Peças',
+    problem: 'A petição do processo parecido do mês passado está em algum lugar. Você só não sabe em qual pasta.',
+    context: 'Sem organização, cada modelo bom que você já escreveu vira arquivo perdido em vez de vantagem reaproveitável.',
+    transform: 'Toda peça produzida fica vinculada ao processo certo, fácil de achar quando precisar de novo.',
+    agent: 'Redator de Petições',
+    agentLine: 'Quem executa esse processo é o Redator de Petições.',
+    results: ['Case Memory por processo', 'Modelos prontos por tipo de ação', 'Peça pronta pra revisão e protocolo'],
+  },
+  {
+    num: 'Processo 03',
+    h: 'Revisão Contratual',
+    problem: 'Qual foi a última versão do contrato mesmo? Tem três arquivos com nome parecido na pasta.',
+    context: 'Sem controle de versão, comparar minutas vira adivinhação, e cláusula alterada passa despercebida.',
+    transform: 'Cada versão fica registrada e comparável, sem confundir qual é a mais recente.',
+    agent: 'Editor de Contratos',
+    agentLine: 'O Editor de Contratos cuida desse processo pra você.',
+    results: ['Comparação entre versões da minuta', 'Cláusulas de risco marcadas', 'Revisão em minutos, não em horas'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 04',
+    h: 'Gestão de Prazos',
+    problem: 'O prazo estava anotado em algum lugar. Caderno, post-it, agenda antiga, só não tinha um lugar só.',
+    context: 'Informação espalhada é informação perdida. E prazo perdido não tem como recuperar depois.',
+    transform: 'Todo prazo mora num lugar só, ligado ao processo certo, sem depender de anotação avulsa.',
+    agent: 'Gerenciador de Prazos',
+    agentLine: 'Esse processo roda com o Gerenciador de Prazos.',
+    results: ['Alerta automático por processo', 'Lembrete manual configurável', 'Visão única de todos os prazos'],
+  },
+  {
+    num: 'Processo 05',
+    h: 'Decisão Estratégica',
+    problem: 'O histórico daquele caso parecido que você já resolveu está espalhado entre memória e papel avulso.',
+    context: 'Sem registro organizado, cada decisão nova ignora o que você já aprendeu em casos passados.',
+    transform: 'Histórico e dado de decisões anteriores ficam organizados, prontos pra consultar antes da próxima decisão.',
+    agent: 'Analista de Riscos',
+    agentLine: 'Quem traz esses números é o Analista de Riscos.',
+    results: ['Prognóstico por vara e por juiz', 'Histórico de decisões similares', 'Apoio pra decidir recorrer ou acordar'],
+  },
+  {
+    num: 'Processo 06',
+    h: 'Processo Comercial',
+    problem: 'Quanto você cobrou no último caso parecido? Você teria que vasculhar recibo ou planilha antiga pra saber.',
+    context: 'Sem registro acessível, cada proposta nova nasce sem referência do que já funcionou antes.',
+    transform: 'Cada cálculo fica registrado, fácil de consultar e usar como referência pro próximo.',
+    agent: 'Calculador de Honorários',
+    agentLine: 'O Calculador de Honorários fecha esse processo.',
+    results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
+  },
+];
+
+const processosIA = [
+  {
+    num: 'Processo 01',
+    h: 'Pesquisa Jurídica Inteligente',
+    problem: 'Você já perguntou pra uma IA genérica uma jurisprudência, e ela inventou um número de processo que não existe.',
+    context: 'IA genérica não tem compromisso com fonte real. Ela completa texto, não verifica se a decisão existe de verdade.',
+    transform: 'Aqui a IA busca jurisprudência real, com fonte rastreável em cada resultado, pra você conferir antes de citar.',
+    agent: 'Pesquisador',
+    agentLine: 'O Copiloto assume esse processo com o Pesquisador.',
+    results: ['Jurisprudência organizada', 'Fonte rastreável em cada citação', 'Resultado pronto pra revisão'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 02',
+    h: 'Produção de Peças',
+    problem: 'Pedir pra IA genérica escrever uma petição do zero produz um texto bonito e sem o histórico do seu caso.',
+    context: 'IA sem contexto do processo erra o que importa: o caso específico do seu cliente.',
+    transform: 'Aqui a IA usa a memória do processo real, não um modelo genérico de petição.',
+    agent: 'Redator de Petições',
+    agentLine: 'Quem executa esse processo é o Redator de Petições.',
+    results: ['Case Memory por processo', 'Modelos prontos por tipo de ação', 'Peça pronta pra revisão e protocolo'],
+  },
+  {
+    num: 'Processo 03',
+    h: 'Revisão Contratual',
+    problem: 'IA genérica lê um contrato e responde de forma vaga, sem apontar risco específico de cláusula.',
+    context: 'Sem ser treinada pra rotina jurídica, ela erra o que realmente importa numa revisão de contrato.',
+    transform: 'Aqui a IA foi construída pra apontar risco contratual de verdade, não resumo genérico.',
+    agent: 'Editor de Contratos',
+    agentLine: 'O Editor de Contratos cuida desse processo pra você.',
+    results: ['Comparação entre versões da minuta', 'Cláusulas de risco marcadas', 'Revisão em minutos, não em horas'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 04',
+    h: 'Gestão de Prazos',
+    problem: 'Nenhuma IA genérica sabe seu prazo processual, porque ela não está ligada ao seu processo real.',
+    context: 'Ferramenta de IA solta não substitui um sistema de acompanhamento de verdade.',
+    transform: 'Aqui a IA está ligada ao processo, e o alerta chega automático, antes do vencimento.',
+    agent: 'Gerenciador de Prazos',
+    agentLine: 'Esse processo roda com o Gerenciador de Prazos.',
+    results: ['Alerta automático por processo', 'Lembrete manual configurável', 'Visão única de todos os prazos'],
+  },
+  {
+    num: 'Processo 05',
+    h: 'Decisão Estratégica',
+    problem: 'Perguntar pra IA genérica "devo recorrer" te dá uma resposta educada, mas sem dado real de jurimetria.',
+    context: 'Sem acesso a histórico de vara e taxa de êxito real, a resposta da IA é só opinião bem escrita.',
+    transform: 'Aqui a IA cruza dado real de jurimetria: histórico da vara, probabilidade de êxito, custo-benefício.',
+    agent: 'Analista de Riscos',
+    agentLine: 'Quem traz esses números é o Analista de Riscos.',
+    results: ['Prognóstico por vara e por juiz', 'Histórico de decisões similares', 'Apoio pra decidir recorrer ou acordar'],
+  },
+  {
+    num: 'Processo 06',
+    h: 'Processo Comercial',
+    problem: 'IA genérica não conhece a tabela OAB nem o critério de complexidade do seu caso.',
+    context: 'Pedir cálculo de honorário pra IA solta é receita de proposta sem fundamento defensável.',
+    transform: 'Aqui o cálculo nasce da tabela OAB cruzada com jurimetria, não de uma estimativa genérica.',
+    agent: 'Calculador de Honorários',
+    agentLine: 'O Calculador de Honorários fecha esse processo.',
+    results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
+  },
+];
+
+const processosCaptacao = [
+  {
+    num: 'Processo 01',
+    h: 'Pesquisa Jurídica Inteligente',
+    problem: 'Cada cliente novo que chega traz um caso novo pra pesquisar do zero, e a fila de pesquisa cresce junto com a captação.',
+    context: 'Captar mais sem esse processo organizado significa só empilhar mais pesquisa manual pra fazer.',
+    transform: 'A pesquisa vira parte do fluxo do escritório, então cada cliente novo não significa mais uma pesquisa manual acumulada.',
+    agent: 'Pesquisador',
+    agentLine: 'O Copiloto assume esse processo com o Pesquisador.',
+    results: ['Jurisprudência organizada', 'Fonte rastreável em cada citação', 'Resultado pronto pra revisão'],
+  },
+  {
+    num: 'Processo 02',
+    h: 'Produção de Peças',
+    problem: 'Mais cliente significa mais petição, e cada uma criada do zero é mais tempo que a captação não considerou.',
+    context: 'Quem investe em captação sem pensar em produção de peça está construindo fila de espera, não crescimento.',
+    transform: 'Cada petição nova reaproveita o que o escritório já sabe fazer, então mais cliente não vira mais gargalo.',
+    agent: 'Redator de Petições',
+    agentLine: 'Quem executa esse processo é o Redator de Petições.',
+    results: ['Case Memory por processo', 'Modelos prontos por tipo de ação', 'Peça pronta pra revisão e protocolo'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 03',
+    h: 'Revisão Contratual',
+    problem: 'Cliente novo às vezes chega com contrato pra revisar, e cada revisão manual é mais tempo represado.',
+    context: 'Sem esse processo pronto, a captação vira promessa que a operação não consegue cumprir a tempo.',
+    transform: 'A revisão sai rápido, então a captação não vira gargalo de contrato acumulado.',
+    agent: 'Editor de Contratos',
+    agentLine: 'O Editor de Contratos cuida desse processo pra você.',
+    results: ['Comparação entre versões da minuta', 'Cláusulas de risco marcadas', 'Revisão em minutos, não em horas'],
+  },
+  {
+    num: 'Processo 04',
+    h: 'Gestão de Prazos',
+    problem: 'Cada cliente novo traz um prazo novo, e cliente demais sem controle é receita de perder prazo.',
+    context: 'Captar sem esse processo pronto é aumentar o risco de erro, não só o volume de trabalho.',
+    transform: 'Cada prazo novo entra automático no sistema, sem depender da sua memória crescer junto com a captação.',
+    agent: 'Gerenciador de Prazos',
+    agentLine: 'Esse processo roda com o Gerenciador de Prazos.',
+    results: ['Alerta automático por processo', 'Lembrete manual configurável', 'Visão única de todos os prazos'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 05',
+    h: 'Decisão Estratégica',
+    problem: 'Mais cliente significa mais decisão de recorrer ou negociar, tomada correndo, sem tempo de analisar direito.',
+    context: 'Crescer sem esse processo pronto significa decidir pior, mais vezes, sob mais pressão.',
+    transform: 'Cada decisão nova já nasce com dado de vara e probabilidade de êxito, mesmo com volume maior.',
+    agent: 'Analista de Riscos',
+    agentLine: 'Quem traz esses números é o Analista de Riscos.',
+    results: ['Prognóstico por vara e por juiz', 'Histórico de decisões similares', 'Apoio pra decidir recorrer ou acordar'],
+  },
+  {
+    num: 'Processo 06',
+    h: 'Processo Comercial',
+    problem: 'Mais cliente significa mais proposta de honorário, e cobrar de cabeça, com pressa, é cobrar errado com mais frequência.',
+    context: 'Captar mais sem esse processo pronto é multiplicar o erro de precificação, não só o volume de propostas.',
+    transform: 'Cada proposta nasce de critério pronto, então mais cliente não significa mais chute no preço.',
+    agent: 'Calculador de Honorários',
+    agentLine: 'O Calculador de Honorários fecha esse processo.',
+    results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
+  },
+];
+
 const processosVariants = {
-  default: null, // usa baseCopy.processos, sem reescrita — gargalo genérico
+  default: null, // usa baseCopy.processos, sem reescrita — fallback genérico
   atendimento: processosAtendimento,
   peticao: processosPeticao,
+  documentos: processosDocumentos,
+  ia: processosIA,
+  captacao: processosCaptacao,
 };
 
 export function getCopy(variant = 'default') {

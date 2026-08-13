@@ -29,9 +29,9 @@ export const questions = [
 export const ROUTE_BY_GARGALO = {
   'Atendimento ao cliente': '/atendimento',
   'Produção de peças': '/peticao',
-  'Organização de documentos': '/6-agentes',
-  'Uso de IA': '/6-agentes',
-  'Captação de clientes': '/6-agentes',
+  'Organização de documentos': '/documentos',
+  'Uso de IA': '/ia',
+  'Captação de clientes': '/captacao',
 };
 
 export function routeForAnswers(answers) {

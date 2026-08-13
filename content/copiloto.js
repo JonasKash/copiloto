@@ -12,80 +12,80 @@ const heroVariants = {
     sub:
       'Pesquisa, petição, contrato, prazo, risco e honorários ainda dependem só de você. O Método Escritório Processual existe pra mudar exatamente essa conta.',
     ctaPrimary: 'Quero sair do Escritório Artesanal',
-    ctaSecondary: 'Ver os 6 processos',
+    ctaSecondary: 'Ver os 9 processos',
   },
   atendimento: {
     h1: 'Enquanto você pesquisa a resposta certa, o cliente já mandou mensagem pra outro escritório.',
     sub:
       'Isso não tem nada a ver com digitar mais rápido. Tem a ver com quanto trabalho manual ainda fica entre a pergunta do cliente e a sua resposta.',
     ctaPrimary: 'Quero responder mais rápido',
-    ctaSecondary: 'Ver os 6 processos',
+    ctaSecondary: 'Ver os 9 processos',
   },
   peticao: {
     h1: 'Você abre um documento em branco toda vez que começa uma petição nova.',
     sub:
-      'O Redator de Petições monta a peça com memória do processo. É um dos 6 processos que cuidam de pesquisa, contrato, prazo, risco e honorários, junto com o resto do Método.',
+      'O Redator de Petições monta a peça com memória do processo. É um dos 9 processos que cuidam de pesquisa, contrato, prazo, risco, honorários e do seu próprio acervo, junto com o resto do Método.',
     ctaPrimary: 'Quero petições mais rápidas',
-    ctaSecondary: 'Ver os 6 processos',
+    ctaSecondary: 'Ver os 9 processos',
   },
   documentos: {
     h1: 'Você sabe que aquele documento existe. Só não lembra onde guardou.',
     sub:
       'Cada minuto procurando arquivo perdido é um minuto que não volta. O Método Escritório Processual organiza isso antes de qualquer outra coisa.',
     ctaPrimary: 'Quero parar de perder documento',
-    ctaSecondary: 'Ver os 6 processos',
+    ctaSecondary: 'Ver os 9 processos',
   },
   ia: {
-    h1: 'Você já tentou usar IA no escritório. Não deu no que devia.',
+    h1: 'Sua IA não sabe o que seu escritório já tem, nem o que você realmente precisa.',
     sub:
-      'O problema nunca foi a ferramenta. Foi tentar automatizar antes de ter processo. O Método resolve isso na ordem certa, o Copiloto entra só depois.',
-    ctaPrimary: 'Quero IA que funciona de verdade',
-    ctaSecondary: 'Ver os 6 processos',
+      'O problema nunca foi só a ferramenta. É que IA genérica não conhece seu acervo, não resume seu histórico, e não se adapta ao seu jeito de trabalhar. O Copiloto tem processo específico pra cada uma dessas três coisas.',
+    ctaPrimary: 'Quero IA que conhece meu escritório',
+    ctaSecondary: 'Ver os 9 processos',
   },
   captacao: {
     h1: 'Captar mais cliente sem organizar antes só aumenta a fila de espera.',
     sub:
       'Mais cliente num escritório sem processo não é crescimento. O Método organiza a operação antes de você acelerar a captação.',
     ctaPrimary: 'Quero crescer sem virar caos',
-    ctaSecondary: 'Ver os 6 processos',
+    ctaSecondary: 'Ver os 9 processos',
   },
 };
 
-// Seção "Os 6 processos" também muda de acordo com o gargalo apontado no
+// Seção "Os 9 processos" também muda de acordo com o gargalo apontado no
 // diagnóstico: o(s) processo(s) mais ligado(s) àquela dor específica
 // lidera(m) a lista e ganha(m) destaque visual. O produto continua sendo
-// o mesmo (os 6 processos existem pra todo mundo) — o que muda é qual
+// o mesmo (os 9 processos existem pra todo mundo) — o que muda é qual
 // deles a página mostra primeiro e como a introdução da seção fala com
 // quem acabou de dizer qual é o seu maior gargalo.
 const processosIntroVariants = {
   default: {
     eyebrow: 'Os processos, não as ferramentas',
-    h: 'Seis processos que deixam de depender só de você.',
+    h: 'Nove processos que deixam de depender só de você.',
     p: 'Cada ferramenta abaixo é só o mecanismo. O que muda o escritório é o processo por trás dela.',
   },
   atendimento: {
     eyebrow: 'O que resolve seu atendimento',
-    h: 'Seis processos. Os dois primeiros tiram o cliente da fila de espera.',
+    h: 'Nove processos. Os dois primeiros tiram o cliente da fila de espera.',
     p: 'Pesquisa e petição são o que mais atrasa uma resposta ao cliente. Veja como esses dois processos entram primeiro, e o resto do Método que sustenta tudo isso.',
   },
   peticao: {
     eyebrow: 'O que tira a petição do zero',
-    h: 'Seis processos. O primeiro é o que muda sua rotina de redação.',
+    h: 'Nove processos. O primeiro é o que muda sua rotina de redação.',
     p: 'Produção de Peças lidera porque é aí que você mais sente o problema hoje. Os outros cinco processos sustentam o resto do Escritório Processual.',
   },
   documentos: {
     eyebrow: 'O que organiza seu escritório',
-    h: 'Seis processos. Todos guardam e recuperam informação sozinhos.',
-    p: 'Documento perdido é sintoma de processo que não existe. Veja como cada um desses 6 processos resolve isso, cada um à sua maneira.',
+    h: 'Nove processos. Todos guardam e recuperam informação sozinhos.',
+    p: 'Documento perdido é sintoma de processo que não existe. Veja como cada um desses 9 processos resolve isso, cada um à sua maneira.',
   },
   ia: {
-    eyebrow: 'IA que executa processo, não promessa vazia',
-    h: 'Seis processos. Cada um com IA aplicada depois que o processo já existe.',
-    p: 'IA sem processo por trás só faz o caos andar mais rápido. Veja como cada um desses 6 processos usa IA do jeito certo, na etapa certa.',
+    eyebrow: 'O que sua IA precisa saber sobre seu escritório',
+    h: 'Nove processos. Os três últimos são o que faltava pra IA valer a pena.',
+    p: 'IA sem saber o que você já tem, sem resumir o que é longo, e sem se adaptar ao seu jeito de trabalhar é só mais uma ferramenta genérica. Os três processos novos resolvem exatamente isso.',
   },
   captacao: {
     eyebrow: 'O que sustenta o crescimento',
-    h: 'Seis processos. A base que aguenta captar mais sem quebrar a operação.',
+    h: 'Nove processos. A base que aguenta captar mais sem quebrar a operação.',
     p: 'Antes de gastar mais com anúncio, veja o que precisa estar pronto pra aguentar o cliente que está por vir.',
   },
 };
@@ -159,6 +159,36 @@ const processosAtendimento = [
     agentLine: 'O Calculador de Honorários fecha esse processo.',
     results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
   },
+  {
+    num: 'Processo 07',
+    h: 'Auditoria de Conteúdo',
+    problem: 'Cliente pergunta algo que você já respondeu outro dia, mas o registro daquela resposta está perdido em algum lugar.',
+    context: 'Sem saber o que já foi resolvido antes, cada resposta nova nasce do zero, mesmo quando não precisava.',
+    transform: 'O Auditor de Conteúdo acha o que você já tem sobre aquele tipo de dúvida, então a resposta ao cliente sai mais rápido.',
+    agent: 'Auditor de Conteúdo',
+    agentLine: 'Esse processo roda com o Auditor de Conteúdo.',
+    results: ['Inventário do que já existe', 'Lacunas identificadas por área', 'Resposta pronta baseada no que já foi resolvido'],
+  },
+  {
+    num: 'Processo 08',
+    h: 'Condensação de Informação',
+    problem: 'Cliente manda um histórico longo de mensagens ou documentos, e ler tudo antes de responder consome o tempo que você não tem.',
+    context: 'Quanto mais longo o material, mais a resposta atrasa, e o cliente sente esse atraso.',
+    transform: 'O Condensador resume o que importa antes de você responder, sem precisar ler tudo de novo.',
+    agent: 'Condensador',
+    agentLine: 'Quem executa esse processo é o Condensador.',
+    results: ['Resumo de decisões longas', 'Síntese de histórico de processo', 'Resposta rápida, sem reler tudo'],
+  },
+  {
+    num: 'Processo 09',
+    h: 'Criação de Agentes Sob Medida',
+    problem: 'Seu jeito de atender cliente tem particularidade que nenhum processo pronto cobre exatamente.',
+    context: 'Ferramenta fechada demais não se adapta ao seu fluxo de atendimento específico.',
+    transform: 'O Criador de Agentes monta um processo de atendimento sob medida pro seu jeito de trabalhar, sem programar.',
+    agent: 'Criador de Agentes',
+    agentLine: 'Esse processo roda com o Criador de Agentes.',
+    results: ['Agente configurado pra sua rotina específica', 'Sem programação', 'Cresce junto com o escritório'],
+  },
 ];
 
 const processosPeticao = [
@@ -223,13 +253,43 @@ const processosPeticao = [
     agentLine: 'O Calculador de Honorários fecha esse processo.',
     results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
   },
+  {
+    num: 'Processo 07',
+    h: 'Auditoria de Conteúdo',
+    problem: 'Você começa uma petição sem saber se já tem um modelo parecido guardado em algum lugar do seu próprio acervo.',
+    context: 'Sem esse mapeamento, você recria o que já existe, em vez de só ajustar o que já funcionou antes.',
+    transform: 'O Auditor de Conteúdo aponta o material do seu próprio acervo que já serve de base pra petição nova.',
+    agent: 'Auditor de Conteúdo',
+    agentLine: 'Esse processo roda com o Auditor de Conteúdo.',
+    results: ['Inventário do que já existe', 'Lacunas identificadas por área', 'Base pronta pra reaproveitar'],
+  },
+  {
+    num: 'Processo 08',
+    h: 'Condensação de Informação',
+    problem: 'Antes de escrever, você precisa reler decisão longa, histórico extenso do processo, ou anotação antiga de outra sessão.',
+    context: 'Reler tudo de novo, toda vez, rouba o tempo que devia ir pra redação em si.',
+    transform: 'O Condensador resume o que é essencial, e você começa a escrever direto do que importa.',
+    agent: 'Condensador',
+    agentLine: 'Quem executa esse processo é o Condensador.',
+    results: ['Resumo de decisões longas', 'Síntese de histórico de processo', 'O essencial, sem reler tudo'],
+  },
+  {
+    num: 'Processo 09',
+    h: 'Criação de Agentes Sob Medida',
+    problem: 'Seu tipo de petição mais comum tem uma estrutura própria que nenhum modelo genérico replica direito.',
+    context: 'Ferramenta genérica demais entrega petição genérica. A sua rotina de redação é mais específica do que isso.',
+    transform: 'O Criador de Agentes monta um processo de redação sob medida pro tipo de petição que você mais escreve.',
+    agent: 'Criador de Agentes',
+    agentLine: 'Esse processo roda com o Criador de Agentes.',
+    results: ['Agente configurado pra sua rotina específica', 'Sem programação', 'Cresce junto com o escritório'],
+  },
 ];
 
 const baseCopy = {
   nav: {
     logo: 'Copiloto Jurídico',
     links: [
-      { href: '#agentes', label: 'Os 6 processos' },
+      { href: '#agentes', label: 'Os 9 processos' },
       { href: '#mentor', label: 'Quem criou' },
       { href: '#faq', label: 'Dúvidas' },
     ],
@@ -237,7 +297,7 @@ const baseCopy = {
   },
 
   proofBar: [
-    { num: '6', label: 'processos implantados' },
+    { num: '9', label: 'processos implantados' },
     { num: '80%', label: 'do trabalho repetitivo automatizado' },
     { num: '5', label: 'passos no Método Escritório Processual' },
     { num: 'min', label: 'para ativar e começar a usar' },
@@ -409,7 +469,7 @@ const baseCopy = {
         p: 'Os agentes foram construídos pra rotina jurídica, com jurisprudência rastreável. Não é um chat que inventa citação.',
       },
     ],
-    ctaLabel: 'Quero implantar os 6 processos',
+    ctaLabel: 'Quero implantar os 9 processos',
   },
 
   processos: [
@@ -476,13 +536,43 @@ const baseCopy = {
       agentLine: 'O Calculador de Honorários fecha esse processo.',
       results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
     },
+    {
+      num: 'Processo 07',
+      h: 'Auditoria de Conteúdo',
+      problem: 'Você tem anos de petição, modelo e anotação salvos. Só que ninguém sabe exatamente o que tem, nem onde.',
+      context: 'Sem esse mapeamento, você recria o que já existe, porque não tem como confiar que vai achar de novo.',
+      transform: 'O Auditor de Conteúdo mapeia o que já existe no seu acervo e aponta o que falta pra cada caso novo.',
+      agent: 'Auditor de Conteúdo',
+      agentLine: 'Esse processo roda com o Auditor de Conteúdo.',
+      results: ['Inventário do que já existe', 'Lacunas identificadas por área', 'Base pronta pra reaproveitar'],
+    },
+    {
+      num: 'Processo 08',
+      h: 'Condensação de Informação',
+      problem: 'Decisão de 40 páginas, processo com histórico de anos, reunião de uma hora: você não tem tempo de reler tudo toda vez.',
+      context: 'Informação em excesso, sem resumo confiável, é quase tão inútil quanto informação nenhuma.',
+      transform: 'O Condensador transforma documento longo em resumo direto, com o que realmente importa pro caso.',
+      agent: 'Condensador',
+      agentLine: 'Quem executa esse processo é o Condensador.',
+      results: ['Resumo de decisões longas', 'Síntese de histórico de processo', 'O essencial, sem reler tudo'],
+    },
+    {
+      num: 'Processo 09',
+      h: 'Criação de Agentes Sob Medida',
+      problem: 'Seu escritório tem uma rotina específica que nenhum dos processos prontos cobre exatamente do seu jeito.',
+      context: 'Ferramenta fechada demais não se adapta. Ferramenta aberta demais exige que você programe.',
+      transform: 'O Criador de Agentes monta um processo novo, sob medida, sem exigir que você saiba programar.',
+      agent: 'Criador de Agentes',
+      agentLine: 'Esse processo roda com o Criador de Agentes.',
+      results: ['Agente configurado pra sua rotina específica', 'Sem programação', 'Cresce junto com o escritório'],
+    },
   ],
 
   compraReal: {
     eyebrow: 'Antes de você decidir',
     h: 'O que você está comprando por R$27?',
     text: [
-      'Tecnicamente, seis agentes de IA.',
+      'Tecnicamente, nove processos de IA.',
       'Mas o que muda de verdade quando você compra é outra coisa: o primeiro passo pra sair do Escritório Artesanal.',
       'A ferramenta é só o meio. A mudança real acontece quando sua operação para de depender só de você.',
     ],
@@ -492,7 +582,7 @@ const baseCopy = {
     eyebrow: 'Quem está por trás',
     h: 'Criado e supervisionado por um advogado, não só por programadores.',
     p:
-      'Os 6 processos nasceram da rotina real de um escritório. Cada um resolve um gargalo que o Dr. Wladmir via todo dia na própria prática, tomando tempo que devia ir pro que realmente importa: o caso do cliente.',
+      'Os 9 processos nasceram da rotina real de um escritório. Cada um resolve um gargalo que o Dr. Wladmir via todo dia na própria prática, tomando tempo que devia ir pro que realmente importa: o caso do cliente.',
     name: 'Dr. Wladmir Bonadio Filho',
     credentials: 'OAB/SP 398.640',
     instagram: '@wbonadiofilho',
@@ -518,7 +608,7 @@ const baseCopy = {
       },
       {
         q: 'Funciona pra qualquer área do direito?',
-        a: 'Os 6 processos cobrem rotina cível, trabalhista e contratual. Se sua área usa pesquisa, petição, contrato, prazo ou cálculo, o Método se aplica.',
+        a: 'Os 9 processos cobrem rotina cível, trabalhista e contratual, incluindo organização do seu próprio conteúdo. Se sua área usa pesquisa, petição, contrato, prazo, cálculo ou depende de manter conhecimento organizado, o Método se aplica.',
       },
       {
         q: 'A jurisprudência trazida pelo Pesquisador é confiável?',
@@ -534,7 +624,7 @@ const baseCopy = {
   pricing: {
     eyebrow: 'O primeiro passo',
     h: 'Pagamento único. O Método implantado. Sem mensalidade.',
-    p: 'Você paga uma vez, pela Hotmart, e libera os 6 processos na hora.',
+    p: 'Você paga uma vez, pela Hotmart, e libera os 9 processos na hora.',
     plan: {
       badge: 'Acesso completo',
       name: 'Copiloto Jurídico',
@@ -547,6 +637,9 @@ const baseCopy = {
         'Implantação do Processo 04 — Gestão de Prazos',
         'Implantação do Processo 05 — Decisão Estratégica',
         'Implantação do Processo 06 — Processo Comercial',
+        'Implantação do Processo 07 — Auditoria de Conteúdo',
+        'Implantação do Processo 08 — Condensação de Informação',
+        'Implantação do Processo 09 — Criação de Agentes Sob Medida',
         'Método Escritório Processual™ operacionalizado pelo Copiloto',
         'Suporte direto de uso',
       ],
@@ -558,9 +651,9 @@ const baseCopy = {
   finalCta: {
     eyebrow: 'Pronto pra parar de ser o gargalo do seu escritório?',
     h: 'Do Escritório Artesanal pro Escritório Processual, hoje.',
-    p: 'Cada dia sem os 6 processos implantados é mais uma pesquisa manual, mais uma petição do zero, mais um prazo pra torcer que não passou.',
-    ctaPrimary: 'Quero implantar os 6 processos',
-    ctaSecondary: 'Ver os 6 processos de novo',
+    p: 'Cada dia sem os 9 processos implantados é mais uma pesquisa manual, mais uma petição do zero, mais um prazo pra torcer que não passou.',
+    ctaPrimary: 'Quero implantar os 9 processos',
+    ctaSecondary: 'Ver os 9 processos de novo',
   },
 
   secureStrip: [
@@ -577,7 +670,7 @@ const baseCopy = {
       {
         title: 'Produto',
         links: [
-          { href: '#agentes', label: 'Os 6 processos' },
+          { href: '#agentes', label: 'Os 9 processos' },
           { href: '#mentor', label: 'Quem criou' },
         ],
       },
@@ -664,6 +757,38 @@ const processosDocumentos = [
     agentLine: 'O Calculador de Honorários fecha esse processo.',
     results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
   },
+  {
+    num: 'Processo 07',
+    h: 'Auditoria de Conteúdo',
+    problem: 'Você sabe que tem aquele documento em algum lugar. Só não sabe exatamente onde, nem se está completo.',
+    context: 'Sem mapeamento do que existe, procurar documento vira busca às cegas, toda vez.',
+    transform: 'O Auditor de Conteúdo mapeia tudo que já está salvo e aponta exatamente o que falta.',
+    agent: 'Auditor de Conteúdo',
+    agentLine: 'Esse processo roda com o Auditor de Conteúdo.',
+    results: ['Inventário do que já existe', 'Lacunas identificadas por área', 'Base pronta pra reaproveitar'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 08',
+    h: 'Condensação de Informação',
+    problem: 'O documento que você encontrou tem 60 páginas, e você só precisa de uma informação específica lá dentro.',
+    context: 'Sem resumo, achar o documento certo não resolve, porque ainda falta garimpar a informação dentro dele.',
+    transform: 'O Condensador entrega o essencial do documento longo, sem você precisar ler tudo de novo.',
+    agent: 'Condensador',
+    agentLine: 'Quem executa esse processo é o Condensador.',
+    results: ['Resumo de decisões longas', 'Síntese de histórico de processo', 'O essencial, sem reler tudo'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 09',
+    h: 'Criação de Agentes Sob Medida',
+    problem: 'Sua forma de organizar documento é específica do seu escritório, e nenhuma ferramenta pronta replica exatamente esse sistema.',
+    context: 'Adaptar seu jeito de organizar a uma ferramenta genérica geralmente significa desistir do seu próprio sistema.',
+    transform: 'O Criador de Agentes monta um processo de organização sob medida pro seu jeito de guardar e achar documento.',
+    agent: 'Criador de Agentes',
+    agentLine: 'Esse processo roda com o Criador de Agentes.',
+    results: ['Agente configurado pra sua rotina específica', 'Sem programação', 'Cresce junto com o escritório'],
+  },
 ];
 
 const processosIA = [
@@ -676,7 +801,6 @@ const processosIA = [
     agent: 'Pesquisador',
     agentLine: 'O Copiloto assume esse processo com o Pesquisador.',
     results: ['Jurisprudência organizada', 'Fonte rastreável em cada citação', 'Resultado pronto pra revisão'],
-    highlight: true,
   },
   {
     num: 'Processo 02',
@@ -697,7 +821,6 @@ const processosIA = [
     agent: 'Editor de Contratos',
     agentLine: 'O Editor de Contratos cuida desse processo pra você.',
     results: ['Comparação entre versões da minuta', 'Cláusulas de risco marcadas', 'Revisão em minutos, não em horas'],
-    highlight: true,
   },
   {
     num: 'Processo 04',
@@ -728,6 +851,38 @@ const processosIA = [
     agent: 'Calculador de Honorários',
     agentLine: 'O Calculador de Honorários fecha esse processo.',
     results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
+  },
+  {
+    num: 'Processo 07',
+    h: 'Auditoria de Conteúdo',
+    problem: 'Você tem anos de petição, modelo, pesquisa e anotação salvos. Só que ninguém sabe exatamente o que tem, nem onde está.',
+    context: 'Sem esse mapeamento, você recria o que já existe. E toda vez que você tenta usar uma IA genérica, ela também não tem acesso a nada disso, trabalha no vácuo.',
+    transform: 'O Auditor de Conteúdo mapeia tudo que já existe no seu acervo e aponta o que falta, então qualquer IA aplicada depois parte de uma base real, não do zero.',
+    agent: 'Auditor de Conteúdo',
+    agentLine: 'Esse processo roda com o Auditor de Conteúdo.',
+    results: ['Inventário do que já existe', 'Lacunas identificadas por área', 'Base real pra qualquer IA usar depois'],
+    highlight: true,
+  },
+  {
+    num: 'Processo 08',
+    h: 'Condensação de Informação',
+    problem: 'Decisão de 40 páginas, processo com histórico de anos, reunião de uma hora: você não tem tempo de reler tudo toda vez que precisa da informação.',
+    context: 'Informação em excesso, sem resumo confiável, é quase tão inútil quanto informação nenhuma. Pedir resumo pra uma IA genérica, sem contexto do seu caso, sai raso ou sai errado.',
+    transform: 'O Condensador entrega o essencial do documento longo, com contexto real do seu processo, não um resumo genérico.',
+    agent: 'Condensador',
+    agentLine: 'Quem executa esse processo é o Condensador.',
+    results: ['Resumo de decisões longas', 'Síntese de histórico de processo', 'O essencial, sem reler tudo'],
+  },
+  {
+    num: 'Processo 09',
+    h: 'Criação de Agentes Sob Medida',
+    problem: 'Seu escritório tem uma rotina específica que nenhum dos processos prontos cobre exatamente do seu jeito, e configurar isso numa IA genérica exige saber programar.',
+    context: 'Ferramenta fechada demais não se adapta. Ferramenta aberta demais exige que você programe.',
+    transform: 'O Criador de Agentes monta um processo novo, sob medida, sem exigir que você saiba programar.',
+    agent: 'Criador de Agentes',
+    agentLine: 'Esse processo roda com o Criador de Agentes.',
+    results: ['Agente configurado pra sua rotina específica', 'Sem programação', 'Cresce junto com o escritório'],
+    highlight: true,
   },
 ];
 
@@ -793,6 +948,36 @@ const processosCaptacao = [
     agent: 'Calculador de Honorários',
     agentLine: 'O Calculador de Honorários fecha esse processo.',
     results: ['Base na tabela OAB vigente', 'Ajuste por complexidade do caso', 'Proposta pronta pra enviar ao cliente'],
+  },
+  {
+    num: 'Processo 07',
+    h: 'Auditoria de Conteúdo',
+    problem: 'Cada cliente novo captado pode precisar de material que seu escritório já tem, só que ninguém teria como saber sem procurar tudo manualmente.',
+    context: 'Crescer sem saber o que já existe no acervo significa recriar trabalho à medida que capta mais gente.',
+    transform: 'O Auditor de Conteúdo garante que material já pronto seja reaproveitado a cada cliente novo, não recriado.',
+    agent: 'Auditor de Conteúdo',
+    agentLine: 'Esse processo roda com o Auditor de Conteúdo.',
+    results: ['Inventário do que já existe', 'Lacunas identificadas por área', 'Base pronta pra reaproveitar'],
+  },
+  {
+    num: 'Processo 08',
+    h: 'Condensação de Informação',
+    problem: 'Mais cliente significa mais histórico, mais documento, mais material acumulando pra revisar antes de cada atendimento.',
+    context: 'Crescer sem esse processo significa que cada cliente novo aumenta o tempo de preparo, não só o volume de trabalho.',
+    transform: 'O Condensador resume o histórico de cada caso, então mais cliente não significa mais tempo de leitura acumulado.',
+    agent: 'Condensador',
+    agentLine: 'Quem executa esse processo é o Condensador.',
+    results: ['Resumo de decisões longas', 'Síntese de histórico de processo', 'O essencial, sem reler tudo'],
+  },
+  {
+    num: 'Processo 09',
+    h: 'Criação de Agentes Sob Medida',
+    problem: 'Conforme capta mais cliente, seu escritório desenvolve rotina própria que nenhum processo padrão cobre.',
+    context: 'Crescer com processo genérico demais significa forçar o cliente novo a caber num molde que não é o seu.',
+    transform: 'O Criador de Agentes monta processo sob medida conforme o escritório cresce, sem depender de programar.',
+    agent: 'Criador de Agentes',
+    agentLine: 'Esse processo roda com o Criador de Agentes.',
+    results: ['Agente configurado pra sua rotina específica', 'Sem programação', 'Cresce junto com o escritório'],
   },
 ];
 

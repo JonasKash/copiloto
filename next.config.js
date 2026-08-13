@@ -27,13 +27,6 @@ const nextConfig = {
   async headers() {
     return [{ source: '/(.*)', headers: securityHeaders }];
   },
-  async redirects() {
-    return [
-      // /ia tinha copy que não batia com a dor real (ver content/quiz.js).
-      // Redireciona até a página ser reescrita com o Processo 07-09.
-      { source: '/ia', destination: '/6-agentes', permanent: false },
-    ];
-  },
   poweredByHeader: false,
 };
 

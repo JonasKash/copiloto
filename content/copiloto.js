@@ -444,7 +444,7 @@ const baseCopy = {
     h: 'Como o Método vira realidade.',
     paragraphs: [
       'Existe uma pergunta importante: como colocar tudo isso em prática sem criar mais trabalho?',
-      'Foi exatamente por isso que criamos o Copiloto Jurídico. Ele não substitui o advogado. Ele operacionaliza o Método.',
+      'Foi exatamente por isso que criamos o Copiloto Jurídico. Ele não substitui o advogado. Ele gerencia processos.',
       'Cada agente representa um processo que deixa de depender exclusivamente da sua memória, do seu tempo e da sua presença.',
     ],
   },

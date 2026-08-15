@@ -4,7 +4,6 @@ import ProofBar from '@/components/ProofBar';
 import FifteenRule from '@/components/FifteenRule';
 import AreaBlock from '@/components/AreaBlock';
 import ImpostoInvisivel from '@/components/ImpostoInvisivel';
-import CrescerVsTrabalhar from '@/components/CrescerVsTrabalhar';
 import Checklist from '@/components/Checklist';
 import CopilotoIntro from '@/components/CopilotoIntro';
 import Processos from '@/components/Processos';
@@ -27,7 +26,6 @@ export default function SalesPage({ copy, area }) {
       <FifteenRule />
       <AreaBlock area={area} />
       <ImpostoInvisivel />
-      <CrescerVsTrabalhar />
       <Checklist />
       <CopilotoIntro />
       <Processos copy={copy} />
